@@ -3,8 +3,8 @@ Contributors: ThemeHigh
 Donate link: https://themehigh.com/
 Tags: Accordion FAQ, WordPress FAQ Plugin, FAQ Plugin, WordPress FAQ, FAQ Widget 
 Requires at least: 5.0
-Tested up to: 6.6
-Stable tag: 1.5.2
+Tested up to: 6.8
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,6 +144,10 @@ You can add as many FAQs you need. There is no limit defined.
 11.Sample FAQ template.
 
 == Changelog ==
+
+= 1.5.3 =
+* Added WordPress 6.8 compatibility.
+* Security: Fixed an XSS vulnerability reported by PatchStack.
 
 = 1.5.2 =
 * Added WordPress 6.6 compatibility.

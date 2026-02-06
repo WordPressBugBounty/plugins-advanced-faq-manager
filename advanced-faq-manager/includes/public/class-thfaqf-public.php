@@ -40,6 +40,8 @@ class THFAQF_Public{
 
         ob_start();
         foreach($faq_post_ids as  $key => $faq_post_id){
+            $faq_post_id = absint($faq_post_id);
+            
             $post_status = get_post_status($faq_post_id);
             $post_type = get_post_type($faq_post_id);
 
@@ -51,7 +53,8 @@ class THFAQF_Public{
         }
 
         $invalid_ids = implode(',', $invalid_ids);
-        echo $invalid_faq_html = !empty($invalid_ids) ? '[FAQ id="'.$invalid_ids.'"]' : '';
+        // Escape output to prevent XSS
+        echo !empty($invalid_ids) ? esc_html('[FAQ id="'.$invalid_ids.'"]') : '';
         return ob_get_clean();
     }
 
@@ -63,8 +66,8 @@ class THFAQF_Public{
             'limit' => '',
         ), $atts );
 
-	    $faq_category = $sh_args['category'];
-	    $limit = $sh_args['limit'];
+	    $faq_category = isset($sh_args['category']) ? sanitize_text_field($sh_args['category']) : '';
+	    $limit = isset($sh_args['limit']) ? intval($sh_args['limit']) : '';
 	    $category_array = explode (",", $faq_category); 
 	    $pst_args = array(  
 	        'post_type' => 'faq',
@@ -89,7 +92,7 @@ class THFAQF_Public{
     public function prepare_faq_layout($loop){
     	$theme_wrapper_class = $this->get_theme_wrapper_class();
         ?> 
-    	<div class="thfaqf-layout-wrapper thfaqf-faq-list <?php echo $theme_wrapper_class; ?>">
+    	<div class="thfaqf-layout-wrapper thfaqf-faq-list <?php echo esc_attr($theme_wrapper_class); ?>">
     		<?php 
     		$faq_index1 = 0;
     		$global_settings = THFAQF_Utils::get_faq_settings();
@@ -97,11 +100,12 @@ class THFAQF_Public{
 			$show_updated_date = isset($global_settings['show_updated_date']) ? $global_settings['show_updated_date'] : false;
     		while($loop->have_posts()) : $loop->the_post();
     			$faq_index1++;
+    			$post_id = absint(get_the_ID());
     			?>
-             	<div class="<?php echo 'thfaqf-tab-id_'.get_the_ID(); ?> thfaqf-tabcontent-wrapper  <?php echo $faq_index1 != 1 ? 'thfaqf-hide' : ''; ?>">
+             	<div class="<?php echo 'thfaqf-tab-id_'.esc_attr($post_id); ?> thfaqf-tabcontent-wrapper  <?php echo esc_attr($faq_index1 != 1 ? 'thfaqf-hide' : ''); ?>">
 				  	<?php
 				  	echo $enable_search_option_faq_layout ? $this->faq_search_option($show_updated_date) : '';
-				  	$last_updated = get_the_modified_date(get_option('date_format'), get_the_ID()); 
+				  	$last_updated = get_the_modified_date(get_option('date_format'), $post_id); 
 				  	echo $show_updated_date ? '<p class="thfaqf-faq-updated-date">'.esc_html($last_updated).'</p>' :  '';
 				  	?>
 				</div>
@@ -115,17 +119,19 @@ class THFAQF_Public{
 	    			$tab_index++;
 	    			$tab_title = get_the_title(get_the_ID());
 	    			$tab_title =  $tab_title ?  $tab_title : 'Title '.$tab_index;
+	    			$tab_id = absint(get_the_ID());
 	    			?>
-	    			<h3 class="thfaqf-tablinks thfaqf-tablinks-<?php echo get_the_ID(); ?>  <?php echo $tab_index == 1 ? 'active' : ''; ?>" onclick="FaqTabOnClick(this, 'thfaqf-tab-id_<?php echo get_the_ID(); ?>')"><?php echo $tab_title; ?></h3>
+	    			<h3 class="thfaqf-tablinks thfaqf-tablinks-<?php echo esc_attr($tab_id); ?>  <?php echo $tab_index == 1 ? 'active' : ''; ?>" onclick="FaqTabOnClick(this, 'thfaqf-tab-id_<?php echo esc_js($tab_id); ?>')"><?php echo esc_html($tab_title); ?></h3>
 				<?php endwhile; ?>
 			</div> 
 	        <?php 
 	        $faq_index = 0;
 	        while( $loop->have_posts()) : $loop->the_post(); 
 	        	$faq_index++;
+	        	$post_id = absint(get_the_ID());
 	        	?>
-				<div class="<?php echo 'thfaqf-tab-id_'.get_the_ID(); ?> thfaqf-tabcontent-wrapper thfaqf-tabcontent  <?php echo $faq_index != 1 ? 'thfaqf-hide' : ''; ?>">
-				  	<?php $this->faq_list(get_the_ID(),'layout'); ?>
+				<div class="<?php echo 'thfaqf-tab-id_'.esc_attr($post_id); ?> thfaqf-tabcontent-wrapper thfaqf-tabcontent  <?php echo $faq_index != 1 ? 'thfaqf-hide' : ''; ?>">
+				  	<?php $this->faq_list($post_id,'layout'); ?>
 				</div>
 			<?php endwhile; ?>
 		</div>
@@ -133,6 +139,7 @@ class THFAQF_Public{
     }
 
 	public function faq_list($post_id,$type){
+		$post_id = absint($post_id);
 		$faqs = get_post_meta($post_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS, true);
 		if(empty($faqs)){
 			return;
@@ -193,11 +200,11 @@ class THFAQF_Public{
 
 		$this->get_additional_css_for_faqs($post_id);
 		?>
-		<div class="thfaqf-faq-list <?php echo $theme_wrapper_class ?>">
+		<div class="thfaqf-faq-list <?php echo esc_attr($theme_wrapper_class); ?>">
             <?php 
-			echo $type == 'faq' ? '<h3 class="thfaqf-faq-list-title">'.get_the_title($post_id).'</h3>' : '';
-			echo ($enable_search_option === 'yes' || $enable_search_option === true) && $type != 'layout'  ? $this->faq_search_option($show_updated_date ) : '';
-	        if(($show_updated_date === "yes" || $show_updated_date == 1) && $type != 'layout'){ 
+			echo $type == 'faq' ? '<h3 class="thfaqf-faq-list-title">'.esc_html(get_the_title($post_id)).'</h3>' : '';
+			echo (($enable_search_option === 'yes' || $enable_search_option === true) && $type !== 'layout') ? wp_kses_post((string) $this->faq_search_option($show_updated_date)) : '';
+			if(($show_updated_date === "yes" || $show_updated_date == 1) && $type != 'layout'){ 
 	        	$last_updated = get_the_modified_date(get_option('date_format'), $post_id);
 	        	echo '<p class="thfaqf-faq-last-updated">'. esc_html($last_updated).'</p>';
 			}
@@ -209,7 +216,7 @@ class THFAQF_Public{
 	        	$like_user_ids = !empty($faq_item['like_user_ids']) ? $faq_item['like_user_ids'] : '';
 	        	$dislike_user_ids = !empty ($faq_item['dislike_user_ids']) ? $faq_item['dislike_user_ids'] : '';
 				$display_none = $key < $visible_faq_count ? '' : 'thfaqf-div-none';
-	            $this->display_faq_item($faq_item, $item_wrapper_class, $item_wrapper_style, $item_title_style, $item_content_style, $title_text_style,$item_expnd_icon_style,$post_id,$key,$like_user_ids,$dislike_user_ids,$faq_title_icon,$enable_icon_options,$user_id,$display_none,$title_active_color);
+	            $this->display_faq_item($faq_item, $item_wrapper_class, $item_wrapper_style, $item_title_style, $item_content_style, $title_text_style,$item_expnd_icon_style,$post_id,$key,$like_user_ids,$dislike_user_ids,$faq_title_icon,$enable_icon_options,$user_id,esc_attr($display_none),$title_active_color);
 	        	$index++;
 	        }
             echo '</div>';
@@ -229,8 +236,8 @@ class THFAQF_Public{
 						$active = $i == 1 ? 'thfaq-ft current' : '';
 						$display_none = $i>4? 'thfaqf-div-none' : '';
 						?>
-			            <span class="thfaqf-page-no <?php echo $display_none; ?>" data-number="<?php echo $i; ?>">
-			           	<a class="thfaqf-pnumber <?php echo $active; ?>"href="#" onclick="ThfaqEachPage(this)" ><?php echo $i; ?></a>
+			            <span class="thfaqf-page-no <?php echo esc_attr($display_none); ?>" data-number="<?php echo esc_attr($i); ?>">
+			           	<a class="thfaqf-pnumber <?php echo esc_attr($active); ?>"href="#" onclick="ThfaqEachPage(this)" ><?php echo esc_html($i); ?></a>
 			            </span>
 			            <?php
 			            if($i == 3){
@@ -238,7 +245,7 @@ class THFAQF_Public{
 			            }
 		        	} 
 		        	?> 
-		        	<span onclick="ThfaqPagination(this,'next_page')" data-page_count="<?php echo $page_count; ?>"><a class="thfaqf-next-page <?php echo $pagination_panel == 1 ? 'thfaqf-div-none': ''; ?>" href="#">>></a></span>	
+		        	<span onclick="ThfaqPagination(this,'next_page')" data-page_count="<?php echo esc_attr($page_count); ?>"><a class="thfaqf-next-page <?php echo esc_attr($pagination_panel == 1 ? 'thfaqf-div-none': ''); ?>" href="#">>></a></span>	
 				</span>
 				<input type="hidden" class="thfaqf-count-faq-number"name="count_faq" value="<?php echo esc_attr($visible_faq_count);?>"/>
 			</p><br>
@@ -251,7 +258,8 @@ class THFAQF_Public{
 		$faq_title   = isset($faq_item['faq_title']) ? $faq_item['faq_title'] : '';
         $faq_content = isset($faq_item['faq_content']) ? $faq_item['faq_content'] : '';
 		$faq_title = htmlspecialchars_decode($faq_title);
-		$faq_content = htmlspecialchars_decode($faq_content);
+		// $faq_content = htmlspecialchars_decode($faq_content); // --- IGNORE ---
+		$faq_content = apply_filters('thfaq_faq_content_single_page', $faq_content, $faq_item);
 		$enable_like_dislike = THFAQF_Utils::get_faq_settings('','like_and_dislike_option');
 		$enable_comment_box = THFAQF_Utils::get_faq_settings('','enable_disable_comment');
 		$expand_style = THFAQF_Utils::get_faq_settings('','expand_style','thfaq-marker');
@@ -260,21 +268,22 @@ class THFAQF_Public{
 		$c_color = $count_comments>0? 'color:black;': '';
 
 		?>
-		<div id="thfaqf-faq-item-<?php echo $post_id.'_'.$key; ?>" class="thfaqf-faq-item  thfaqf-faq-item-<?php echo $post_id; ?>  <?php echo esc_attr($display_none).' '.esc_attr($item_wrapper_class).' thfaqf-post-id-'.esc_attr($post_id); ?> thfaqf-count-dsply-setngs" style="<?php echo esc_attr($item_wrapper_style); ?>" >
-			<div data-active_color="<?php echo $title_active_color; ?>" class="thfaqf-faq-item-title" style="<?php echo esc_attr($item_title_style); ?>">
+		<div id="thfaqf-faq-item-<?php echo esc_attr($post_id.'_'.$key); ?>" class="thfaqf-faq-item  thfaqf-faq-item-<?php echo esc_attr($post_id); ?>  <?php echo esc_attr($display_none).' '.esc_attr($item_wrapper_class).' thfaqf-post-id-'.esc_attr($post_id); ?> thfaqf-count-dsply-setngs" style="<?php echo esc_attr($item_wrapper_style); ?>" >
+			<div data-active_color="<?php echo esc_attr($title_active_color); ?>" class="thfaqf-faq-item-title" style="<?php echo esc_attr($item_title_style); ?>">
  				<h4>
  				<?php 
 	 				if($enable_icon_options) {?>
 	 					<span class="thfaqf-title-icon"><i class="<?php echo esc_attr($faq_title_icon);?>"></i></span>
 	 				<?php } ?>
 	 				<span class="<?php echo esc_attr($expand_style);?> thfaqf-toggle-icon" style="<?php echo esc_attr($item_expnd_icon_style); ?>"></span>
- 					<span class="thfaqf-title-text " style="<?php echo esc_attr($title_text_style); ?>" ><?php echo $faq_title; ?></span>
+ 					<span class="thfaqf-title-text " style="<?php echo esc_attr($title_text_style); ?>" ><?php echo esc_html($faq_title); ?></span>
  				</h4>	
 			</div>
 			<div class="thfaqf-faq-item-content" style="<?php echo esc_attr($item_content_style); ?>" >
 				<?php 
-				echo wpautop($faq_content);
-				echo $enable_like_dislike == true ?  $this->like_option($post_id,$key,$like_user_ids,$dislike_user_ids,$user_id) : '';
+
+				echo wp_kses_post(wpautop($faq_content));
+				echo $enable_like_dislike == true ? wp_kses_post($this->like_option($post_id,$key,$like_user_ids,$dislike_user_ids,$user_id)) : '';
 			
 				if($enable_comment_box == true){ 
 					?>
@@ -293,6 +302,14 @@ class THFAQF_Public{
 	}
 
 	public function display_comment_box($faq_id,$faq_index){
+		// Cast IDs to integers for security
+		$faq_id = absint($faq_id);
+		$faq_index = absint($faq_index);
+		
+		if($faq_id <= 0){
+		    return;
+		}
+		
 		?>
 		<div class="thfaqf-comment-wrapper">
 			<form form method="post" class="thfaqf-post-comment">
@@ -303,18 +320,29 @@ class THFAQF_Public{
 				<input type="hidden" name="faq_index"value="<?php echo esc_attr($faq_index); ?>">
 				<p><textarea placeholder="Add a Comment..."name="user_msg" class="thfaqf-comment-box thfaqf-ucomment"></textarea></p>
 				<p class="threq-comment"></p>
-				<input type="hidden" name="wp_thfaqc_nonce" value="<?php echo wp_create_nonce('thfaqc_nonce'); ?>"/>
+				<input type="hidden" name="wp_thfaqc_nonce" value="<?php echo esc_attr(wp_create_nonce('thfaqc_nonce')); ?>"/>
 		    	<p><button type="submit" name="thfaqf_comment_submt" class="thfaqf-submt-cmmt button primary is-xsmall" onclick="submitFaqfComment(this)">Send</button></p><p class="thfaqf-comment-validetion"></p>
 		    </form>	
 
 		    <?php
 		    $faq_data = get_post_meta($faq_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS, true);
+		    // Validate array key exists before access
+		    if(!isset($faq_data[$faq_index])){
+		        return;
+		    }
+		    
 		    $faq_comment_id = isset($faq_data[$faq_index]['faq_comment']) ? $faq_data[$faq_index]['faq_comment'] : '';
 		    $faq_comments_array = isset($faq_comment_id) ? explode(',', $faq_comment_id) : array();
 
 		    if($faq_comments_array) {
 				$arr =array();
 				foreach($faq_comments_array as $key =>$faq_single_comment_ids){
+					// Cast comment ID to integer
+					$faq_single_comment_ids = absint($faq_single_comment_ids);
+					if($faq_single_comment_ids <= 0){
+					    continue;
+					}
+					
 					$post_status = get_post_status($faq_single_comment_ids);
 					$post_type = get_post_type($faq_single_comment_ids);
 				    $post_content = get_post($faq_single_comment_ids);
@@ -329,7 +357,7 @@ class THFAQF_Public{
 							<div class="thfaq-cmmted-user">
 							 	<span class="thfaq-cmmt-user-name"><i class="fas fa-user"></i><spam style="margin-left:7px;"><?php echo esc_html($faq_cmmted_user).' ';?><?php echo !empty($faq_cmmted_user) ? 'Commented' : ''?></spam></span> 
 							</div>
-							<br><div class="thfaq-cmmted-data"><?php echo  do_shortcode( $content );?></div>
+							<br><div class="thfaq-cmmted-data"><?php  echo $content; ?></div>
 						</div>
 						<?php
 				    }
@@ -364,12 +392,15 @@ class THFAQF_Public{
 			$user_msg = isset($_REQUEST['user_msg']) ? trim($_REQUEST['user_msg']) : false;
 			$faq_id = isset($_REQUEST['faq_id']) ? trim($_REQUEST['faq_id']) : false;
 			$faq_index = isset($_REQUEST['faq_index']) ? trim($_REQUEST['faq_index']) : false;
+			
+			// Cast IDs to integers
+			$faq_id = absint($faq_id);
+			$faq_index = absint($faq_index);
+			
 	        $post_status = get_post_status($faq_id);
 
 			$user_name = sanitize_text_field(stripslashes($user_name));
 			$user_msg = wp_filter_post_kses(stripslashes($user_msg));
-		   	$faq_id  = sanitize_text_field($faq_id);
-		   	$faq_index  = sanitize_text_field($faq_index);
 		   	$message = array();
 
 			if(empty($user_name)){
@@ -531,6 +562,7 @@ class THFAQF_Public{
 	}
 
 	public function like_option($post_id,$key,$like_user_ids,$dislike_user_ids,$user_id){ 
+		ob_start(); // start capturing output
 		$liked_user = !empty($like_user_ids) ? explode(',', $like_user_ids): array();
 		$dislikeliked_user = !empty($dislike_user_ids) ? explode(',', $dislike_user_ids): array();
 		$like_count = is_array($liked_user) ? count($liked_user) : 0;
@@ -541,12 +573,13 @@ class THFAQF_Public{
 		?>
 
 		<span class="th-like-wrapper">		
-			<a href="<?php echo esc_attr($user_login); ?>" onclick="likeDislikeOption(this)" data-user_id="<?php echo esc_attr($user_id); ?>" class="thfaq-thums-up" data-_wp_thfaqld_nonce="<?php echo wp_create_nonce('thfaqld_nonce');?>" data-post_id="<?php echo esc_attr($post_id);?>" data-uid="<?php echo esc_attr($key);?>" data-value="like" data-action="like_dislike_option"><i style="<?php echo esc_attr($l_color); ?>" class="thfaq-icomoon icon-thumb_up_alt"></i></a>
+			<a href="<?php echo esc_attr($user_login); ?>" onclick="likeDislikeOption(this)" data-user_id="<?php echo esc_attr($user_id); ?>" class="thfaq-thums-up" data-_wp_thfaqld_nonce="<?php echo esc_attr(wp_create_nonce('thfaqld_nonce'));?>" data-post_id="<?php echo esc_attr($post_id);?>" data-uid="<?php echo esc_attr($key);?>" data-value="like" data-action="like_dislike_option"><i style="<?php echo esc_attr($l_color); ?>" class="thfaq-icomoon icon-thumb_up_alt"></i></a>
 			<span class="thfaq-like-count"><?php echo esc_html($like_count);?></span>  
-			<a href="<?php echo esc_attr($user_login); ?>" onclick="likeDislikeOption(this)" data-user_id="<?php echo esc_attr($user_id); ?>" class="thfaq-thums-down" data-post_id="<?php echo esc_attr($post_id);?>" data-_wp_thfaqld_nonce="<?php echo wp_create_nonce('thfaqld_nonce');?>" data-uid="<?php echo esc_attr($key);?>" data-value="dislike"  data-action="like_dislike_option"><span class="th-dislike-img"><i style="<?php echo esc_attr($d_color); ?>" class="thfaq-icomoon icon-thumb_down"></i></span></a>
+			<a href="<?php echo esc_attr($user_login); ?>" onclick="likeDislikeOption(this)" data-user_id="<?php echo esc_attr($user_id); ?>" class="thfaq-thums-down" data-post_id="<?php echo esc_attr($post_id);?>" data-_wp_thfaqld_nonce="<?php echo esc_attr(wp_create_nonce('thfaqld_nonce'));?>" data-uid="<?php echo esc_attr($key);?>" data-value="dislike"  data-action="like_dislike_option"><span class="th-dislike-img"><i style="<?php echo esc_attr($d_color); ?>" class="thfaq-icomoon icon-thumb_down"></i></span></a>
 			<span class="thfaq-dislike-count"><?php echo esc_html($dislike_count);?></span>
 		</span>
 		<?php
+		return ob_get_clean(); // return the HTML safely as a string
 	}
 
 	public function faq_search_option($show_updated_date){
@@ -572,10 +605,14 @@ class THFAQF_Public{
 	       	$value = isset($_REQUEST['value']) ? trim($_REQUEST['value']) : false;
 	       	$faq_uid = isset($_REQUEST['uid']) ? trim($_REQUEST['uid']) : false;
 	       	$post_id = isset($_REQUEST['post_id']) ? trim($_REQUEST['post_id']) : false;
+	       	
+	       	// Sanitize and validate inputs
+	       	$value = sanitize_text_field($value);
+	       
+	       	// Cast numeric values with absint() before use
+	       	$faq_uid = absint($faq_uid);
+	       	$post_id = absint($post_id);	
 	       	$faq_data = get_post_meta($post_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS, true);
-		   	$value = sanitize_text_field($value);
-		   	$faq_uid  = sanitize_text_field($faq_uid);
-		   	$post_id  = sanitize_text_field($post_id);
 		   	$result = array();
 
 	        if ($user_id >0){
@@ -658,15 +695,15 @@ class THFAQF_Public{
         ?>
         <style type="text/css">
         	<?php echo $enable ? esc_attr($css) : ''; ?>
-        	.thfaqf-tab h3.thfaqf-tablinks-<?=$id?>.active {
-			    background-color: <?=$tab_bg_color?>!important;
-			    color: <?=$tab_active_color?>!important;
+        	.thfaqf-tab h3.thfaqf-tablinks-<?php echo esc_attr($id); ?>.active {
+			    background-color: <?php echo esc_attr($tab_bg_color); ?>!important;
+			    color: <?php echo esc_attr($tab_active_color); ?>!important;
 			}
-			.thfaqf-tab h3.thfaqf-tablinks-<?=$id?>:hover {
-			  	background-color: <?=$tab_bg_color?>!important;
+			.thfaqf-tab h3.thfaqf-tablinks-<?php echo esc_attr($id); ?>:hover {
+			  	background-color: <?php echo esc_attr($tab_bg_color); ?>!important;
 			}
-		    .thfaqf-faq-item-<?=$id?>.thfaqf-active .thfaqf-title-text{
-				color: <?=$title_active_color?>!important;
+		    .thfaqf-faq-item-<?php echo esc_attr($id); ?>.thfaqf-active .thfaqf-title-text{
+				color: <?php echo esc_attr($title_active_color); ?>!important;
 			}
           
         </style>

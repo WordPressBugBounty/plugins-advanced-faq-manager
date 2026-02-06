@@ -160,7 +160,7 @@ abstract class THFAQF_Admin_Settings{
 
 			}else if($ftype == 'switch'){
 				$field_props .= isset($field['checked']) && $field['checked'] ? ' checked' : '';
-				$field_html .= '<label class="'.$class.' thpladmin-switch">';
+				$field_html .= '<label class="'.esc_attr($class).' thpladmin-switch">';
 				$field_html .= '<input type="checkbox" '. $field_props .' />'; 
 				$field_html .= '<span class="thpladmin-slider"></span>';
 				$field_html .= '</label>';
@@ -196,12 +196,13 @@ abstract class THFAQF_Admin_Settings{
 				$input_cell_props = !empty($args['input_cell_props']) ? ' '.$args['input_cell_props'] : '';
 				?>
 	            
-				<td <?php echo $label_cell_props ?> > <?php 
-					echo $flabel; echo $required_html; 
+				<td <?php echo esc_attr($label_cell_props); ?> > <?php 
+					echo esc_html($flabel); 
+					echo wp_kses_post($required_html); 
 					
 					if(isset($field['sub_label']) && !empty($field['sub_label'])){
 						?>
-	                    <br /><span class="thpladmin-subtitle"><?php _e($field['sub_label'], 'advanced-faq-manager'); ?></span>
+	                    <br /><span class="thpladmin-subtitle"><?php esc_html_e($field['sub_label'], 'advanced-faq-manager'); ?></span>
 						<?php
 					}
 					?>
@@ -214,7 +215,7 @@ abstract class THFAQF_Admin_Settings{
 				}
 				?>
 	            
-	            <td <?php echo $input_cell_props ?> ><?php echo $field_html; ?></td>
+	            <td <?php echo esc_attr($input_cell_props); ?> ><?php echo $field_html; ?></td>
 	            
 	            <?php
 			}else{
@@ -248,7 +249,7 @@ abstract class THFAQF_Admin_Settings{
 		
 		if($render_cell){
 		?>
-			<td <?php echo $args['cell_props']; ?> ><?php echo $field_html; ?></td>
+			<td <?php echo esc_attr($args['cell_props']); ?> ><?php echo $field_html; ?></td>
 		<?php 
 		}else{
 		?>
@@ -259,15 +260,15 @@ abstract class THFAQF_Admin_Settings{
 
     public function render_form_section_separator($props, $atts=array()){
 		?>
-		<tr valign="top"><td colspan="<?php echo $props['colspan']; ?>" style="height:10px;"></td></tr>
-		<tr valign="top"><td colspan="<?php echo $props['colspan']; ?>" class="thpladmin-form-section-title" ><?php echo $props['title']; ?></td></tr>
-		<tr valign="top"><td colspan="<?php echo $props['colspan']; ?>" style="height:0px;"></td></tr>
+		<tr valign="top"><td colspan="<?php echo esc_attr($props['colspan']); ?>" style="height:10px;"></td></tr>
+		<tr valign="top"><td colspan="<?php echo esc_attr($props['colspan']); ?>" class="thpladmin-form-section-title" ><?php echo esc_html($props['title']); ?></td></tr>
+		<tr valign="top"><td colspan="<?php echo esc_attr($props['colspan']); ?>" style="height:0px;"></td></tr>
 		<?php
 	}
 
 	public function render_form_section_subtitle($props, $atts=array()){
 		?>
-		<tr valign="top"><td colspan="<?php echo $props['colspan']; ?>" class="thpladmin-form-section-subtitle" ><?php echo $props['title']; ?></td></tr>
+		<tr valign="top"><td colspan="<?php echo esc_attr($props['colspan']); ?>" class="thpladmin-form-section-subtitle" ><?php echo esc_html($props['title']); ?></td></tr>
 		<?php
 	}
 

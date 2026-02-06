@@ -6,6 +6,8 @@ if(!class_exists('THFAQF_Admin')):
 
 class THFAQF_Admin{
 
+    private $screen_id;
+
     public function faq_general_setting_menu(){
         $this->faq_setting_menu();
     }
@@ -55,7 +57,7 @@ class THFAQF_Admin{
 
     public function output_settings(){
         if(!current_user_can('manage_options')){
-            wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+            wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'advanced-faq-manager' ) );
         }      
         $settings = THFAQF_Admin_Settings_General::instance();
         $settings->render_page();

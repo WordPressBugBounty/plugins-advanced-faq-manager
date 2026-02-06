@@ -153,7 +153,7 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
                     <td>Override global settings</td>
                     <td class="pl-10">
                         <label class="thpladmin-switch">
-                            <input type="checkbox" id="override_global_settings" name="override_global_settings" value= yes <?php echo $override_checked; ?> onchange="thfaqfEnableDisableOverrideSettings(this)"/>
+                            <input type="checkbox" id="override_global_settings" name="override_global_settings" value= yes <?php echo esc_attr($override_checked); ?> onchange="thfaqfEnableDisableOverrideSettings(this)"/>
                             <span class="thpladmin-slider"></span>
                         </label>
                     </td>
@@ -195,7 +195,7 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
     }
 
     public function render_meta_box_shortcode_display(){
-        $post_id = get_the_ID();
+        $post_id = absint(get_the_ID());
         $shortcode = '[faq id="'. $post_id .'"]';
 
         ?>
@@ -211,7 +211,7 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
     }
 
     public function render_meta_box_shortcode_display_faq_group(){
-        $post_id = get_the_ID();
+        $post_id = absint(get_the_ID());
         $shortcode = '[thfaq_group category="category_1,category_2,etc.." limit="-1"]';
 
         ?>
@@ -275,9 +275,9 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
         ob_start();
         $rand_editor_id = $random_editor_id ? $random_editor_id : rand(1,10000);
         ?>
-        <div class="thfaqf-single-form-wrapper <?php echo $wrapper_class; ?>" >
+        <div class="thfaqf-single-form-wrapper <?php echo esc_attr($wrapper_class); ?>" >
             <div class="thfaqf-single-form-header">
-                <span class="faq-title"><?php echo wordwrap($title); ?></span>
+                <span class="faq-title"><?php echo esc_html(wordwrap($title)); ?></span>
                 <span class="faq-delete dashicons dashicons-trash" onclick="thfaqfDeleteFaqItem(this)"></span>
                 <span class="faq-edit dashicons dashicons-edit" onclick="thfaqfEditFaqItem(this)"></span>
                 <span class="faq-clone" onclick="thfaqClone(this)"><i class="far fa-clone"></i></span>
@@ -285,7 +285,7 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
             <div class="thfaqf-single-form">
                 <p>
                     <label class="faq-label">Title:</label>
-                    <input type="text"  name="faq_title[]" value="<?php echo $title; ?>" placeholder="FAQ title" class="faq-input-title">
+                    <input type="text"  name="faq_title[]" value="<?php echo esc_attr($title); ?>" placeholder="FAQ title" class="faq-input-title">
                 </p>
 
                 <label class="faq-label">Content:</label>
@@ -293,11 +293,11 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
                 <button type="button" class="button faq-insert-media" onclick="thfaqfInsertMedia(this, event)">
                     <span class="thfaqf-media-button-icon"></span> Add Media
                 </button>
-                <textarea name="faq_content[]" id = "<?php echo 'thfaq_editor_tinymce_'.$rand_editor_id; ?>" class="faq-input-content"><?php echo $content; ?></textarea>
-                <input type="hidden"  name="faq_comment[]" value="<?php echo $faq_comment; ?>"/>
-                <input type="hidden"  name="like_user_ids[]" value="<?php echo $like_user_ids; ?>"/>
-                <input type="hidden"  name="dislike_user_ids[]" value="<?php echo $dislike_user_ids; ?>"/>
-                <input type="hidden" class="random-editor-id" name="random_editor_id[]" value="<?php echo $rand_editor_id; ?>"/>
+                <textarea name="faq_content[]" id = "<?php echo esc_attr('thfaq_editor_tinymce_'.$rand_editor_id); ?>" class="faq-input-content"><?php echo esc_textarea($content); ?></textarea>
+                <input type="hidden"  name="faq_comment[]" value="<?php echo esc_attr($faq_comment); ?>"/>
+                <input type="hidden"  name="like_user_ids[]" value="<?php echo esc_attr($like_user_ids); ?>"/>
+                <input type="hidden"  name="dislike_user_ids[]" value="<?php echo esc_attr($dislike_user_ids); ?>"/>
+                <input type="hidden" class="random-editor-id" name="random_editor_id[]" value="<?php echo esc_attr($rand_editor_id); ?>"/>
 
             </div>
         </div>
@@ -323,11 +323,12 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
                     foreach ($fields as $key => $type) {
                         $faq_field_value  = isset($_POST[$key][$i]) ? $_POST[$key][$i] : array();
 
-                        if($type == 'f_text' || $type == 'f_textarea'){
-                            $faq_field_value = htmlspecialchars($faq_field_value);
+                        if($type == 'f_text'){
+                            $faq_field_value = sanitize_post_field('post_title', stripslashes($faq_field_value), 0, 'db');
+                        }elseif($type == 'f_textarea'){
+                            $faq_field_value = sanitize_post_field('post_content', stripslashes($faq_field_value), 0, 'db');
                         }else {
-                            
-                            $faq_field_value = sanitize_text_field($faq_field_value);
+                            $faq_field_value = sanitize_text_field(stripslashes($faq_field_value));
                         }
 
                         $faq_array[$i][$key] = $faq_field_value;
@@ -398,6 +399,7 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
     public function add_custom_column_data($post_columns, $post_id){
         $posttype = get_post_type();
         if($post_columns === 'Shortcode' && $posttype == 'faq'){
+            $post_id = absint($post_id);
             $shortcode = '[FAQ id="'. $post_id .'"]'
             ?>
             <input type="text" value="<?php echo esc_html($shortcode); ?>" readonly="readonly"> 

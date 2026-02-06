@@ -96,7 +96,7 @@ class THFAQF_Admin_Settings_General extends THFAQF_Admin_Settings{
 		            	$this->render_form_element_empty_cell();
 						?>
 		            </tr>
-		              <tr class="thfaq-icon-poss <?php echo $enable_icon_options; ?>">
+		              <tr class="thfaq-icon-poss <?php echo esc_attr($enable_icon_options); ?>">
 		            	<?php
 						$this->render_form_field_element($this->settings_fields['icon_picker'], $settings, $this->cell_props_L);
 		            	$this->render_form_element_empty_cell();
@@ -165,7 +165,7 @@ class THFAQF_Admin_Settings_General extends THFAQF_Admin_Settings{
 		            	$this->render_form_element_empty_cell();
 						?>
 		            </tr> 
-		            <tr class="thfaqf-additonal-css-wrapper <?php echo $thfaq_custom_css; ?>">
+		            <tr class="thfaqf-additonal-css-wrapper <?php echo esc_attr($thfaq_custom_css); ?>">
 		            	<?php
 						$this->render_form_field_element($this->settings_fields['thfaq_custom_css'], $settings, $this->cell_props_L);
 		            	$this->render_form_element_empty_cell();
@@ -176,7 +176,7 @@ class THFAQF_Admin_Settings_General extends THFAQF_Admin_Settings{
 					<input type="submit" name="save_settings" class="button-primary" value="Save changes">
                     <input type="submit" name="reset_settings" class="button" value="Reset to default" onclick="return confirm('Are you sure you want to reset to default settings? all your changes will be deleted.');">
             	</p>
-            	<p class="mt-20">Here you can <a href="<?php echo $eurl.'export.php'; ?>"><i>Export</i></a>/ <a href="<?php echo $eurl.'import.php'; ?>"> <i>Import</i></a> FAQs</p>
+            	<p class="mt-20">Here you can <a href="<?php echo esc_url($eurl.'export.php'); ?>"><i>Export</i></a>/ <a href="<?php echo esc_url($eurl.'import.php'); ?>"> <i>Import</i></a> FAQs</p>
             </form>
     	</div>       
     	<?php
@@ -184,8 +184,8 @@ class THFAQF_Admin_Settings_General extends THFAQF_Admin_Settings{
 
     private function wp_verify_nonce() {
     	?>
-    	<input type="hidden" name="wp_thfaqgs_nonce" value="<?php echo wp_create_nonce('thfaqgs_nonce'); ?>">
-        <input type="hidden" name="wp_thfaqrs_nonce" value="<?php echo wp_create_nonce('thfaqrs_nonce'); ?>">
+    	<input type="hidden" name="wp_thfaqgs_nonce" value="<?php echo esc_attr(wp_create_nonce('thfaqgs_nonce')); ?>">
+        <input type="hidden" name="wp_thfaqrs_nonce" value="<?php echo esc_attr(wp_create_nonce('thfaqrs_nonce')); ?>">
     	<?php
     }
 
