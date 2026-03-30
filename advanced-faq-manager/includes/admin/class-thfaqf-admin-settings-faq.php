@@ -54,8 +54,8 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
         $user_comment_labels =   array(
             'name'                =>   ('FAQ Comments'),
             'singular_name'       =>   ('FAQ Comments'),
-            'add_new'             => __('', 'advanced-faq-manager'),
-            'all_items'           => __('', 'advanced-faq-manager'),
+            'add_new'             => '',
+            'all_items'           => '',
             'add_new_item'        => __('Add New Post','advanced-faq-manager'),
             'edit_item'           => __('Edit FAQ Comment','advanced-faq-manager'),
             'new_item'            => __('New Post','advanced-faq-manager'),
@@ -273,7 +273,7 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
 
     private function get_single_faq_form($title='', $content='', $wrapper_class='',$random_editor_id=false,$faq_comment='',$like_user_ids='',$dislike_user_ids=''){    
         ob_start();
-        $rand_editor_id = $random_editor_id ? $random_editor_id : rand(1,10000);
+        $rand_editor_id = !empty($random_editor_id) ? absint($random_editor_id) : wp_rand(1, 10000);
         ?>
         <div class="thfaqf-single-form-wrapper <?php echo esc_attr($wrapper_class); ?>" >
             <div class="thfaqf-single-form-header">

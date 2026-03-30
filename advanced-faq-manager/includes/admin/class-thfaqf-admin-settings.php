@@ -90,8 +90,8 @@ abstract class THFAQF_Admin_Settings{
 				$input_class[] = 'thpladmin-colorpicker';
 			}
 			
-			$fname  = $args['input_name_prefix'].$name.$args['input_name_suffix'];
-			$flabel = isset($field['label']) ? __($field['label'], 'advanced-faq-manager') : '';
+			$fname  = $args['input_name_prefix'] . $name . $args['input_name_suffix'];
+			$flabel = isset($field['label']) ? $field['label'] : '';
 			$default_value = isset($field['default_value']) ? $field['default_value'] : 1;
 			$fvalue = isset($field['value']) ? $field['value'] : $default_value;
 			$fwrapper = isset($field['wrapper']) ? $field['wrapper'] : '';
@@ -101,11 +101,45 @@ abstract class THFAQF_Admin_Settings{
 			$I_id = isset($field['ids']) ? $field['ids'] : array();			
 			$input_width = $args['input_width'] ? 'width:'.$args['input_width'].';' : '';
 			$fvalue = ($ftype === 'number' && !$fvalue) ? $default_value : $fvalue;
-			$field_props = 'id="'. $id .'" name="'. $fname .'" value="'. $fvalue .'" style="'. $input_width .'"';
-			$field_props = ($ftype === 'radio_btn' || $ftype === 'iconpicker') ? 'name="'. $fname .'" style="'. $input_width .'"' : $field_props;
-			$field_props .=  ($ftype === 'textarea') ? ' spellcheck="false" cols="'. $cols .'" rows="'. $rows .'"' : '';
-			$field_props .= isset($field['placeholder']) && !empty($field['placeholder']) ? ' placeholder="'.$field['placeholder'].'"' : '';
-			$field_props .= is_array($input_class) && !empty($input_class) ? ' class="'.implode(" ", $input_class).'"' : '';
+
+
+			// Build escaped field attributes
+			$field_attrs = [
+			    'id'    => esc_attr($id),
+			    'name'  => esc_attr($fname),
+			    'value' => esc_attr($fvalue),
+			    'style' => esc_attr($input_width),
+			];
+
+			// Special cases
+			if ($ftype === 'radio_btn' || $ftype === 'iconpicker') {
+			    $field_attrs = [
+			        'name' => esc_attr($fname),
+			        'style'=> esc_attr($input_width),
+			    ];
+			}
+
+			if ($ftype === 'textarea') {
+			    $field_attrs['spellcheck'] = 'false';
+			    $field_attrs['cols']       = esc_attr($cols);
+			    $field_attrs['rows']       = esc_attr($rows);
+			}
+
+			if (!empty($field['placeholder'])) {
+			    $field_attrs['placeholder'] = esc_attr($field['placeholder']);
+			}
+
+			if (!empty($input_class) && is_array($input_class)) {
+			    $field_attrs['class'] = esc_attr(implode(' ', $input_class));
+			}
+
+			// Convert attributes array to string
+			$field_props = '';
+			foreach ($field_attrs as $attr => $val) {
+			    $field_props .= $attr . '="' . $val . '" ';
+			}
+			$field_props = trim($field_props);
+
 			$required_html = isset($field['required']) && $field['required'] ? '<abbr class="required" title="required">*</abbr>' : '';
 			$field_html = '';
 			
@@ -131,14 +165,14 @@ abstract class THFAQF_Admin_Settings{
 				$field_html = '<input type="number" '. $field_props .' min="0" />';
 
 			}else if($ftype == 'textarea'){
-				$field_html = '<textarea '. $field_props .' >'.$fvalue.'</textarea>';
+				$field_html = '<textarea '. $field_props .' >'.esc_textarea($fvalue).'</textarea>';
 				
 			}else if($ftype == 'select'){
 				$field_html = '<select '. $field_props .' >';
 				foreach($field['options'] as $ovalue => $otext){
-					$otext = __($otext, 'advanced-faq-manager');
+					// $otext = __($otext, 'advanced-faq-manager');
 					$selected = $ovalue === $fvalue ? 'selected' : '';
-					$field_html .= '<option value="'. trim($ovalue) .'" '.$selected.'>'. $otext .'</option>';
+					$field_html .= '<option value="'. esc_attr(trim($ovalue)) .'" '.$selected.'>'. esc_html($otext) .'</option>';
 				}
 				$field_html .= '</select>';
 				
@@ -147,15 +181,15 @@ abstract class THFAQF_Admin_Settings{
 
 				$field_html = '<div class="thfaq-share-wrapper"><select multiple="multiple" '. $field_props .' >';
 				foreach($field['options'] as $ovalue => $otext){
-					$otext = __($otext, 'advanced-faq-manager');
+					// $otext = __($otext, 'advanced-faq-manager');
 					$selected = in_array($ovalue, $fvalue_arr) ? 'selected' : '';
-					$field_html .= '<option value="'. trim($ovalue) .'" '.$selected.'>'. $otext .'</option>';
+					$field_html .= '<option value="'. esc_attr(trim($ovalue)) .'" '.$selected.'>'. esc_html($otext) .'</option>';
 				}
 				$field_html .= '</select></div>';
 				
 			}else if($ftype == 'colorpicker'){
-				$prev_style = $fvalue ? 'background-color:'.$fvalue.';' : '';
-				$field_html  = '<span class="thpladmin-colorpicker-preview '.$name.'_preview" style="'.$prev_style.'"></span>';
+				$prev_style = $fvalue ? 'background-color:'.esc_attr($fvalue).';' : '';
+				$field_html  = '<span class="thpladmin-colorpicker-preview '.esc_attr($name).'_preview" style="'.esc_attr($prev_style).'"></span>';
                 $field_html .= '<input type="text" autocomplete="off" '. $field_props .' />'; 
 
 			}else if($ftype == 'switch'){
@@ -169,23 +203,23 @@ abstract class THFAQF_Admin_Settings{
 			    for($i=0; $i<$F_count; $i++){
 			    	$selected = $fvalue === $F_rvalue[$i] ? 'checked' : '';
 	            	$F_root = $F_path.'icons/'.$F_icon_path[$i];
-	            	$field_html .= '<input type="radio" id="'.$I_id[$i].'" '. $field_props .' value="'.$F_rvalue[$i].'" '.$selected.'/>';
-	            	$field_html .= '<label for = "'.$I_id[$i].'">';
-	            	$field_html .= '<img class ="thfaqf-icon-display" src="'.$F_root.'" alt="no image" />';
+	            	$field_html .= '<input type="radio" id="'.esc_attr($I_id[$i]).'" '. $field_props .' value="'.esc_attr($F_rvalue[$i]).'" '.$selected.'/>';
+	            	$field_html .= '<label for = "'.esc_attr($I_id[$i]).'">';
+	            	$field_html .= '<img class ="thfaqf-icon-display" src="'.esc_url($F_root).'" alt="no image" />';
 	            	$field_html .= '</label>';
 
 				}
 			}elseif($ftype === 'iconpicker'){
 				$F_icons = THFAQF_Utils::get_font_awesome_icons();
 			    $count = 0;
-			    $field_html .= '<span class="thfaq-toggle-expndicon button button-large"><i class="thfaq-icon-panal '.$fvalue.'"></i></span>';
+			    $field_html .= '<span class="thfaq-toggle-expndicon button button-large"><i class="thfaq-icon-panal '.esc_attr($fvalue).'"></i></span>';
 			    $field_html .= '<span class="thfaqf-icon-wrapper thfaq-hide-expndicon">';
                 foreach ($F_icons as $class => $domine) {
                 	$count ++;
                 	$selected = $fvalue === $class ? 'checked' : '';
-                	$field_html .= '<input type="radio" title="'.$class.'" data-th_icon="'.$class.'" id="thfaq-icon-'.$count.'" '. $field_props .' value="'.$class.'" '.$selected.' />';
-	            	$field_html .= '<label for = "'.'thfaq-icon-'.$count.'">';
-	            	$field_html .= '<i class="thfaqf-icon-display thfaqf-icon-style '. $class .'"></i>';
+                	$field_html .= '<input type="radio" title="'.esc_attr($class).'" data-th_icon="'.esc_attr($class).'" id="thfaq-icon-'.esc_attr($count).'" '. $field_props .' value="'.esc_attr($class).'" '.$selected.' />';
+	            	$field_html .= '<label for = "'.'thfaq-icon-'.esc_attr($count).'">';
+	            	$field_html .= '<i class="thfaqf-icon-display thfaqf-icon-style '. esc_attr($class) .'"></i>';
 	            	$field_html .= '</label>';
                 }
                 $field_html .= '</span>';
@@ -202,7 +236,7 @@ abstract class THFAQF_Admin_Settings{
 					
 					if(isset($field['sub_label']) && !empty($field['sub_label'])){
 						?>
-	                    <br /><span class="thpladmin-subtitle"><?php esc_html_e($field['sub_label'], 'advanced-faq-manager'); ?></span>
+	                    <br /><span class="thpladmin-subtitle"><?php esc_html($field['sub_label']); ?></span>
 						<?php
 					}
 					?>
@@ -236,16 +270,16 @@ abstract class THFAQF_Admin_Settings{
 		$fid    = $args['id_prefix'].$name;
 		$fname  = $args['name_prefix'].$name;
 		$fvalue = isset($field['value']) ? $field['value'] : '';
-		$flabel = __($field['label'], 'advanced-faq-manager');
+		$flabel = isset($field['label']) ? $field['label'] : '';
 		
-		$field_props  = 'id="'. $fid .'" name="'. $fname .'"';
-		$field_props .= !empty($fvalue) ? ' value="'. $fvalue .'"' : '';
+		$field_props  = 'id="'. esc_attr($fid) .'" name="'. esc_attr($fname) .'"';
+		$field_props .= !empty($fvalue) ? ' value="'. esc_attr($fvalue) .'"' : '';
 		$field_props .= isset($field['checked']) && $field['checked'] ? ' checked' : '';
 		$field_props .= $args['input_props'];
 		$field_props .= isset($field['onchange']) && !empty($field['onchange']) ? ' onchange="'.$field['onchange'].'"' : '';
 		
 		$field_html  = '<input type="checkbox" '. $field_props .' />';
-		$field_html .= '<label for="'. $fid .'" '. $args['label_props'] .' > '. $flabel .'</label>';
+		$field_html .= '<label for="'. esc_attr($fid) .'" '. esc_attr($args['label_props']) .' > '. esc_html($flabel) .'</label>';
 		
 		if($render_cell){
 		?>

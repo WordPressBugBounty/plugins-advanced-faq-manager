@@ -191,7 +191,7 @@ class THFAQF_Admin_Settings_General extends THFAQF_Admin_Settings{
 
     public function save_settings(){
 		if (!isset( $_POST['wp_thfaqgs_nonce']) || ! wp_verify_nonce($_POST['wp_thfaqgs_nonce'], 'thfaqgs_nonce')) {
-    		echo $responce = '<div class="thfaq_update_message failed"><p><b>Sorry, your nonce did not verify.</b></p></div>';
+    		echo '<div class="thfaq_update_message failed"><p><strong>' . esc_html__('Sorry, your nonce did not verify.', 'advanced-faq-manager') . '</strong></p></div>';
 			exit;
         }else {
 			$settings = array();
@@ -256,7 +256,7 @@ class THFAQF_Admin_Settings_General extends THFAQF_Admin_Settings{
 
 	public function reset_settings(){
 		if (!isset( $_POST['wp_thfaqrs_nonce']) || ! wp_verify_nonce($_POST['wp_thfaqrs_nonce'], 'thfaqrs_nonce')) {
-			echo $responce = '<div class="thfaq_update_message failed"><p><b>Sorry, your nonce did not verify.</b></p></div>';
+			echo '<div class="thfaq_update_message failed"><p><strong>' . esc_html__('Sorry, your nonce did not verify.', 'advanced-faq-manager') . '</strong></p></div>';
 			exit;
         }else {
 			THFAQF_Utils::delete_faq_settings();

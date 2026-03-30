@@ -5,7 +5,18 @@ var thfaqf_public = (function($, window, document){
         setup_faq_accordion();
         setup_share_icons();
         activate_faq_group_url_search();
+
+        $('input[name="form_time"]').val(Math.floor(Date.now() / 1000));
     }
+
+    $(document).on('focus click', 'input[name="user_name"], textarea[name="user_msg"]', function(){
+        var $form = $(this).closest('form');
+        var $timeField = $form.find('input[name="form_time"]');
+
+        if ($timeField.length) {
+            $timeField.val(Math.floor(Date.now() / 1000));
+        }
+    });
 
     function setup_faq_accordion(){
         var open_multiple = thfaqf_public_var.open_multiple_faqs;
@@ -150,16 +161,21 @@ var thfaqf_public = (function($, window, document){
 
             },
             success: function(response){
-                click.find('.threq-name').html(response.name);
-                click.find('.threq-comment').html(response.comment);
-                click.find('.thfaqf-comment-validetion').html(response);
+                click.find('.threq-name').html(response.data.name);
+                click.find('.threq-comment').html(response.data.comment);
+                click.find('.thfaqf-comment-validetion').html(response.data.message);
                 
                 if(name && comment){
                     click.find('.thfaqf-comment-box').val('');
                 }
 
-                if(response.verify_nonce)
-                    click.find('.thfaqf-comment-validetion').html(response.verify_nonce);
+                if(!response.success){
+                    if(response.data.code === 'nonce_error'){
+                        console.log('Nonce failed');
+                    }
+
+                    click.find('.thfaqf-comment-validetion').html(response.data.message);
+                }
             },
             fail: function() {
                alert('fail');

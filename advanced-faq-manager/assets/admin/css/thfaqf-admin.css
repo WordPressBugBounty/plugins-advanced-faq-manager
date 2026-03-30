@@ -492,11 +492,11 @@ input[type="checkbox"].thfaq_checkbox:checked + .thfaq_check_switch_slider:befor
 /**
  *  Admin Settings
  */
-.thpladmin-notice a{
+/*.thpladmin-notice a{
     display:block;
     padding:0;
     height: 63px;
-}
+}*/
 
 .thpladmin-notice p{
     margin-bottom:0px;

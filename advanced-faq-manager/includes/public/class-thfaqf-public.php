@@ -13,7 +13,8 @@ class THFAQF_Public{
 
     public function enqueue_styles_and_scripts(){
 		wp_register_style('thfaqf-public-style', THFAQF_ASSETS_URL_PUBLIC.'css/thfaqf-public.css');
-	    wp_enqueue_style('FontAwesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+	    // wp_enqueue_style('FontAwesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+	    wp_enqueue_style('thfaq-fontawesome', THFAQF_ASSETS_URL_PUBLIC.'css/font-awesome.min.css', array(), THFAQF_VERSION);
 	    wp_enqueue_script('font-icon-picker-js',THFAQF_ASSETS_URL_PUBLIC.'js/fontawesome.min.js',array('jquery'),THFAQF_VERSION,true);
 	    wp_enqueue_style('thfaqf-public-style');
 	    wp_enqueue_style('styleicon');
@@ -102,11 +103,19 @@ class THFAQF_Public{
     			$faq_index1++;
     			$post_id = absint(get_the_ID());
     			?>
-             	<div class="<?php echo 'thfaqf-tab-id_'.esc_attr($post_id); ?> thfaqf-tabcontent-wrapper  <?php echo esc_attr($faq_index1 != 1 ? 'thfaqf-hide' : ''); ?>">
+             	<div class="<?php echo esc_attr('thfaqf-tab-id_' . $post_id); ?> thfaqf-tabcontent-wrapper  <?php echo esc_attr($faq_index1 != 1 ? 'thfaqf-hide' : ''); ?>">
 				  	<?php
-				  	echo $enable_search_option_faq_layout ? $this->faq_search_option($show_updated_date) : '';
-				  	$last_updated = get_the_modified_date(get_option('date_format'), $post_id); 
-				  	echo $show_updated_date ? '<p class="thfaqf-faq-updated-date">'.esc_html($last_updated).'</p>' :  '';
+				  	if ($enable_search_option_faq_layout) {
+				        echo $this->faq_search_option($show_updated_date);
+				    }
+				  	if ($show_updated_date) {
+				        $last_updated = get_the_modified_date(get_option('date_format'), $post_id);
+				        ?>
+				        <p class="thfaqf-faq-updated-date">
+				            <?php echo esc_html($last_updated); ?>
+				        </p>
+				        <?php
+				    }
 				  	?>
 				</div>
     		    <?php 
@@ -317,7 +326,16 @@ class THFAQF_Public{
 				<p class="threq-name"></p>
 				<input type="hidden" name="action" value="thfaqf_comment">
 				<input type="hidden" name="faq_id" value="<?php echo esc_attr($faq_id);?>">
-				<input type="hidden" name="faq_index"value="<?php echo esc_attr($faq_index); ?>">
+				<input type="hidden" name="faq_index" value="<?php echo esc_attr($faq_index); ?>">
+				<input type="hidden" name="form_time">
+				<input type="text" name="website" style="display:none">
+				<?php
+				$token = wp_generate_uuid4();
+
+				// store token + timestamp (10 mins validity)
+				set_transient('thfaq_' . $token, time(), 10 * MINUTE_IN_SECONDS);
+				?>
+				<input type="hidden" name="form_token" value="<?php echo esc_attr($token); ?>">
 				<p><textarea placeholder="Add a Comment..."name="user_msg" class="thfaqf-comment-box thfaqf-ucomment"></textarea></p>
 				<p class="threq-comment"></p>
 				<input type="hidden" name="wp_thfaqc_nonce" value="<?php echo esc_attr(wp_create_nonce('thfaqc_nonce')); ?>"/>
@@ -349,7 +367,7 @@ class THFAQF_Public{
 
                     if($post_status == 'publish' and $post_type == 'user-comment'){
                     	$content = $post_content->post_content;
-                    	$content = wpautop(make_clickable(wp_kses_post($content)));
+                    	$content = wpautop(wp_kses_post(make_clickable($content)));
                         $faq_cmmted_user = get_the_title($faq_single_comment_ids);
                     	?>
 
@@ -357,7 +375,7 @@ class THFAQF_Public{
 							<div class="thfaq-cmmted-user">
 							 	<span class="thfaq-cmmt-user-name"><i class="fas fa-user"></i><spam style="margin-left:7px;"><?php echo esc_html($faq_cmmted_user).' ';?><?php echo !empty($faq_cmmted_user) ? 'Commented' : ''?></spam></span> 
 							</div>
-							<br><div class="thfaq-cmmted-data"><?php  echo $content; ?></div>
+							<br><div class="thfaq-cmmted-data"><?php echo $content; ?></div>
 						</div>
 						<?php
 				    }
@@ -381,70 +399,125 @@ class THFAQF_Public{
 		return isset($comment_arr) ? count($comment_arr) : 0;
 	} 
 
-	public  function thfaqf_comment(){
-		if (! isset( $_POST['wp_thfaqc_nonce'] ) || ! wp_verify_nonce( $_POST['wp_thfaqc_nonce'],'thfaqc_nonce')){
-	        $message =array( 'verify_nonce' => '<span class="thfaqf-error-submt">Sorry, your nonce did not verify.</span>');
-	        wp_send_json($message);
-	    }else{
-		    $submit_faq_comment = array();
-			$post_type = 'user-comment';
-			$user_name = isset($_REQUEST['user_name']) ? trim($_REQUEST['user_name']) : false;
-			$user_msg = isset($_REQUEST['user_msg']) ? trim($_REQUEST['user_msg']) : false;
-			$faq_id = isset($_REQUEST['faq_id']) ? trim($_REQUEST['faq_id']) : false;
-			$faq_index = isset($_REQUEST['faq_index']) ? trim($_REQUEST['faq_index']) : false;
-			
-			// Cast IDs to integers
-			$faq_id = absint($faq_id);
-			$faq_index = absint($faq_index);
-			
-	        $post_status = get_post_status($faq_id);
+	public function thfaqf_comment(){
 
-			$user_name = sanitize_text_field(stripslashes($user_name));
-			$user_msg = wp_filter_post_kses(stripslashes($user_msg));
-		   	$message = array();
-
-			if(empty($user_name)){
-				$message['name'] = "<span class='thfaqf-error-submt'><b>Name is a required field.</b></span>";		
-			}
-
-			if(empty($user_msg)){
-				$message['comment'] = "<span class='thfaqf-error-submt'><b>Comment is a required field.</b></span>";
-			}
-			
-			if(!empty($message)){
-	            wp_send_json($message);
-			}else{	
-
-	    		$submit_faq_comment = array(
-			        'post_title'   => $user_name,
-			        'post_content' => $user_msg,
-			        'post_type'    => $post_type,
-			        'post_status'  => 'draft',
-			    );
-
-	    		$post_id = wp_insert_post( $submit_faq_comment, $wp_error = false );
-	            $faq_data = get_post_meta($faq_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS, true);
-	 			$faq_comment_string = isset($faq_data[$faq_index]['faq_comment']) ? $faq_data[$faq_index]['faq_comment'] : '';
-	    		if($faq_comment_string){
-	    			$faq_comments_array = explode(',', $faq_comment_string);
-	    			if(is_array($faq_comments_array)){
-	    				array_push($faq_comments_array,$post_id);
-	    			}
-	    			
-	    		}else{
-		    		$faq_comments_array = array($post_id);
-		    	}
-
-		    	$faq_comments = implode(',', $faq_comments_array);  
-		    	$faq_data[$faq_index]['faq_comment'] = $faq_comments;
-
-	            if($post_status == 'publish'){
-	            	$update_data1 = update_post_meta($faq_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS,$faq_data);
-	            }
-	    		$message = '<span class="thfaqf-success-submt">Comment posted successfully.<span>'; 
-	    	}
+	    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+	        $this->thfaqf_error('Invalid request method.');
 	    }
-        wp_send_json($message);
+
+	    if ( ! check_ajax_referer('thfaqc_nonce', 'wp_thfaqc_nonce', false) ) {
+	        $this->thfaqf_error('Invalid or expired nonce.');
+	    }
+
+	    if (!empty($_POST['website'])) {
+	        $this->thfaqf_error('Spam detected');
+	    }
+
+	    if (empty($_SERVER['HTTP_USER_AGENT']) || strlen($_SERVER['HTTP_USER_AGENT']) < 10) {
+	        $this->thfaqf_error('Invalid request');
+	    }
+
+	    // Token validation
+	    $token = isset($_POST['form_token']) ? sanitize_text_field($_POST['form_token']) : '';
+	    $stored_time = get_transient('thfaq_' . $token);
+
+	    if (!$token || !$stored_time) {
+	        $this->thfaqf_error('Invalid session.');
+	    }
+
+	    $time_diff = time() - $stored_time;
+
+	    if ($time_diff < 3) {
+	        $this->thfaqf_error('Form submitted too quickly.');
+	    }
+
+	    if ($time_diff > 600) {
+	        delete_transient('thfaq_' . $token);
+	        $this->thfaqf_error('Form expired. Please refresh.');
+	    }
+
+	    // delete_transient('thfaq_' . $token); // one-time use
+
+	    // Inputs
+	    $user_name = isset($_POST['user_name']) ? sanitize_text_field(wp_unslash($_POST['user_name'])) : '';
+	    $user_msg  = isset($_POST['user_msg']) ? wp_filter_post_kses(wp_unslash($_POST['user_msg'])) : '';
+	    $faq_id    = isset($_POST['faq_id']) ? absint($_POST['faq_id']) : 0;
+	    $faq_index = isset($_POST['faq_index']) ? absint($_POST['faq_index']) : 0;
+
+	    if (!$faq_id) {
+	        $this->thfaqf_error('Invalid FAQ reference.');
+	    }
+
+	    // Rate limit
+	    $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+	    $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+	    $rate_key = 'thfaq_comment_' . md5($ip . $faq_id . $ua);
+
+	    $count = (int) get_transient($rate_key);
+
+	    if ($count >= 10) {
+	        $this->thfaqf_error('Too many requests. Try again after a few minutes.');
+	    }
+
+	    set_transient($rate_key, $count + 1, 5 * MINUTE_IN_SECONDS);
+
+	    // Validation
+	    if (empty($user_name)) {
+	        wp_send_json_error(['name' => '<span class="thfaqf-error-submt">Name is required.</span>']);
+	    }
+
+	    if (empty($user_msg)) {
+	        wp_send_json_error(['comment' => '<span class="thfaqf-error-submt">Comment is required.</span>']);
+	    }
+
+	    $faq_post = get_post($faq_id);
+
+	    if (!$faq_post || $faq_post->post_status !== 'publish') {
+	        $this->thfaqf_error('FAQ does not exist.');
+	    }
+
+	    $faq_data = get_post_meta($faq_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS, true);
+
+	    if (!is_array($faq_data) || !isset($faq_data[$faq_index])) {
+	        $this->thfaqf_error('Invalid FAQ item.');
+	    }
+
+	    if (!THFAQF_Utils::get_faq_settings('', 'enable_disable_comment')) {
+	        $this->thfaqf_error('Comments are disabled.');
+	    }
+
+	    // Insert
+	    $post_id = wp_insert_post([
+	        'post_title'   => $user_name,
+	        'post_content' => $user_msg,
+	        'post_type'    => 'user-comment',
+	        'post_status'  => 'draft',
+	    ], true);
+
+	    if (is_wp_error($post_id)) {
+	        $this->thfaqf_error('Failed to save comment.');
+	    }
+
+	    // Update meta
+	    $faq_comment_string = $faq_data[$faq_index]['faq_comment'] ?? '';
+	    $faq_comments_array = $faq_comment_string ? explode(',', $faq_comment_string) : [];
+	    $faq_comments_array[] = $post_id;
+
+	    $faq_data[$faq_index]['faq_comment'] = implode(',', $faq_comments_array);
+
+	    update_post_meta($faq_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS, $faq_data);
+
+	    $message = '<span class="thfaqf-success-submt">Comment posted successfully.</span>';
+
+		wp_send_json_success([
+		    'message' => wp_kses_post($message)
+		]);
+	}
+
+	public function thfaqf_error($msg) {
+	    wp_send_json_error([
+	        'message' => '<span class="thfaqf-error-submt">' . esc_html($msg) . '</span>'
+	    ]);
 	}
 
 	public function display_social_share($post_id, $settings){
@@ -584,7 +657,7 @@ class THFAQF_Public{
 
 	public function faq_search_option($show_updated_date){
 		?>
-		<div class="thfaqf-main thfaqf-faq-last-updated" style="<?php echo !$show_updated_date ? 'margin: 1.5rem 0!important' : ''; ?>">
+		<div class="thfaqf-main thfaqf-faq-last-updated" style="<?php echo esc_attr(!$show_updated_date ? 'margin: 1.5rem 0!important' : ''); ?>">
 			<div class="thfaqf-form-group thfaqf-has-search">
 				<span class="faq-search-area">
 			    	<span class="fas fa-search thfaqf-form-control-faq"></span>
