@@ -85,7 +85,7 @@
     font-weight: 600;
     content: "\f078";
     float: right;
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free", "FontAwesome" !important;
 }
 
 .thfaqf-active .thfaqf-faq-item-content{

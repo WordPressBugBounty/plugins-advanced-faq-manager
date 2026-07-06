@@ -28,8 +28,9 @@ h1.thpladmin-page-title{
 .thfaq-form-table input[type=text],
 .thfaq-form-table select{
     width: 150px;
-    height: auto;
-    padding: 8px 5px;
+    height: 55px;
+    padding: 8px 10px;
+    line-height: 2;
 }
 
 .thfaq-form-table input.readonly, .thfaq-form-table input[readonly], 
@@ -605,11 +606,12 @@ input[type=text].thpladmin-colorpicker{
     border-radius: 0px;
     vertical-align: top;
     cursor: pointer;
+    min-height: 35px!important;
 }
 
 .thpladmin-colorpicker-preview{
     box-sizing: border-box;
-    padding: 14px 13px 15px 13px;
+    padding: 19px 18px 15px 13px;
     border: 1px solid #ddd;
     background-color: #FFFFFF;
     display: inline-block;

@@ -50,6 +50,7 @@ class THFAQF{
 		add_action('init', array($post_faq, 'init'));
 		add_action('add_meta_boxes', array($post_faq, 'metabox_section')); 
 		add_action('save_post', array($post_faq, 'save_faq_postdata'), 10, 3);
+		add_filter('wp_terms_checklist_args', array($post_faq, 'modify_faq_category_checklist_args'), 10, 2);
         add_filter('manage_posts_columns', array($post_faq,'add_custom_column'));
         add_action('manage_posts_custom_column', array($post_faq, 'add_custom_column_data'), 10, 2);
         add_filter('dynamic_sidebar_params', array($post_faq,'faq_widget_settings'));
@@ -66,6 +67,7 @@ class THFAQF{
 		$plugin_public = new THFAQF_Public();
 		add_action('wp_enqueue_scripts', array($plugin_public, 'enqueue_styles_and_scripts'));
 		add_action( 'wp_ajax_like_dislike_option',array($plugin_public,'like_dislike_option'));	
+		add_action( 'wp_ajax_nopriv_like_dislike_option',array($plugin_public,'like_dislike_option'));
 		add_action( 'wp_ajax_thfaqf_comment',array($plugin_public,'thfaqf_comment'));
 		add_action( 'wp_ajax_nopriv_thfaqf_comment',array($plugin_public, 'thfaqf_comment'));
 		add_filter( 'body_class',array($plugin_public,'thfaq_add_body_class'),10);
@@ -76,4 +78,3 @@ endif;
 
 
     
-

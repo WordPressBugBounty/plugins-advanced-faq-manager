@@ -3,8 +3,8 @@ Contributors: ThemeHigh
 Donate link: https://themehigh.com/
 Tags: Accordion FAQ, WordPress FAQ Plugin, FAQ Plugin, WordPress FAQ, FAQ Widget 
 Requires at least: 5.0
-Tested up to: 6.9
-Stable tag: 1.5.4
+Tested up to: 7.0
+Stable tag: 1.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,6 +144,10 @@ You can add as many FAQs you need. There is no limit defined.
 11.Sample FAQ template.
 
 == Changelog ==
+
+= 1.5.5 =
+* Added WordPress 7.0 compatibility.
+* Fix: Child categories no longer appear as top-level items when added via AJAX.
 
 = 1.5.4 =
 * Added WordPress 6.9 compatibility.

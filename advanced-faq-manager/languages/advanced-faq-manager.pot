@@ -1,15 +1,15 @@
 # Copyright (C) 2026 ThemeHigh
-# This file is distributed under the same license as the Advanced FAQ Manager (Best FAQ Plugin for WordPress) plugin.
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Advanced FAQ Manager (Best FAQ Plugin for WordPress) 1.5.4\n"
+"Project-Id-Version: Advanced FAQ Manager (Best FAQ Plugin for WordPress) 1.5.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/advanced-faq-manager\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-12T09:10:31+00:00\n"
+"POT-Creation-Date: 2026-06-24T10:17:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: advanced-faq-manager\n"
@@ -145,6 +145,11 @@ msgstr ""
 msgid "New Category Name"
 msgstr ""
 
+#: includes/admin/class-thfaqf-admin-settings-general.php:194
+#: includes/admin/class-thfaqf-admin-settings-general.php:259
+msgid "Sorry, your nonce did not verify."
+msgstr ""
+
 #: includes/admin/class-thfaqf-admin.php:46
 #: includes/admin/class-thfaqf-admin.php:47
 #: includes/admin/class-thfaqf-admin.php:53
@@ -161,4 +166,3620 @@ msgstr ""
 
 #: includes/admin/class-thfaqf-admin.php:60
 msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:269
+msgid "500px"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:270
+msgid "accessible-icon"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:271
+msgid "accusoft"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:272
+#: includes/class-thfaqf-utils.php:273
+msgid "address-book"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:274
+#: includes/class-thfaqf-utils.php:275
+msgid "address-card"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:276
+msgid "adjust"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:277
+msgid "adn"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:278
+msgid "adversal"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:279
+msgid "affiliatetheme"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:280
+msgid "algolia"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:281
+msgid "align-center"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:282
+msgid "align-justify"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:283
+msgid "align-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:284
+msgid "align-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:285
+msgid "allergies"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:286
+msgid "amazon"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:287
+msgid "amazon-pay"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:288
+msgid "ambulance"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:289
+msgid "american-sign-language-interpreting"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:290
+msgid "amilia"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:291
+msgid "anchor"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:292
+msgid "android"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:293
+msgid "angellist"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:294
+msgid "angle-double-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:295
+msgid "angle-double-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:296
+msgid "angle-double-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:297
+msgid "angle-double-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:298
+msgid "angle-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:299
+msgid "angle-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:300
+msgid "angle-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:301
+msgid "angle-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:302
+msgid "angrycreative"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:303
+msgid "angular"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:304
+msgid "app-store"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:305
+msgid "app-store-ios"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:306
+msgid "apper"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:307
+msgid "apple"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:308
+msgid "apple-pay"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:309
+msgid "archive"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:310
+#: includes/class-thfaqf-utils.php:311
+msgid "arrow-alt-circle-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:312
+#: includes/class-thfaqf-utils.php:313
+msgid "arrow-alt-circle-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:314
+#: includes/class-thfaqf-utils.php:315
+msgid "arrow-alt-circle-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:316
+#: includes/class-thfaqf-utils.php:317
+msgid "arrow-alt-circle-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:318
+msgid "arrow-circle-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:319
+msgid "arrow-circle-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:320
+msgid "arrow-circle-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:321
+msgid "arrow-circle-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:322
+msgid "arrow-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:323
+msgid "arrow-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:324
+msgid "arrow-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:325
+msgid "arrow-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:326
+msgid "arrows-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:327
+msgid "arrows-alt-h"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:328
+msgid "arrows-alt-v"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:329
+msgid "assistive-listening-systems"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:330
+msgid "asterisk"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:331
+msgid "asymmetrik"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:332
+msgid "at"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:333
+msgid "audible"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:334
+msgid "audio-description"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:335
+msgid "autoprefixer"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:336
+msgid "avianex"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:337
+msgid "aviato"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:338
+msgid "aws"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:339
+msgid "backward"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:340
+msgid "balance-scale"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:341
+msgid "ban"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:342
+msgid "band-aid"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:343
+msgid "bandcamp"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:344
+msgid "barcode"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:345
+msgid "bars"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:346
+msgid "baseball-ball"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:347
+msgid "basketball-ball"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:348
+msgid "bath"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:349
+msgid "battery-empty"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:350
+msgid "battery-full"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:351
+msgid "battery-half"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:352
+msgid "battery-quarter"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:353
+msgid "battery-three-quarters"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:354
+msgid "bed"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:355
+msgid "beer"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:356
+msgid "behance"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:357
+msgid "behance-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:358
+#: includes/class-thfaqf-utils.php:359
+msgid "bell"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:360
+#: includes/class-thfaqf-utils.php:361
+msgid "bell-slash"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:362
+msgid "bicycle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:363
+msgid "bimobject"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:364
+msgid "binoculars"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:365
+msgid "birthday-cake"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:366
+msgid "bitbucket"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:367
+msgid "bitcoin"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:368
+msgid "bity"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:369
+msgid "black-tie"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:370
+msgid "blackberry"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:371
+msgid "blind"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:372
+msgid "blogger"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:373
+msgid "blogger-b"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:374
+msgid "bluetooth"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:375
+msgid "bluetooth-b"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:376
+msgid "bold"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:377
+msgid "bolt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:378
+msgid "bomb"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:379
+msgid "book"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:380
+#: includes/class-thfaqf-utils.php:381
+msgid "bookmark"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:382
+msgid "bowling-ball"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:383
+msgid "box"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:384
+msgid "box-open"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:385
+msgid "boxes"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:386
+msgid "braille"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:387
+msgid "briefcase"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:388
+msgid "briefcase-medical"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:389
+msgid "btc"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:390
+msgid "bug"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:391
+#: includes/class-thfaqf-utils.php:392
+msgid "building"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:393
+msgid "bullhorn"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:394
+msgid "bullseye"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:395
+msgid "burn"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:396
+msgid "buromobelexperte"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:397
+msgid "bus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:398
+msgid "buysellads"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:399
+msgid "calculator"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:400
+#: includes/class-thfaqf-utils.php:401
+msgid "calendar"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:402
+#: includes/class-thfaqf-utils.php:403
+msgid "calendar-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:404
+#: includes/class-thfaqf-utils.php:405
+msgid "calendar-check"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:406
+#: includes/class-thfaqf-utils.php:407
+msgid "calendar-minus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:408
+#: includes/class-thfaqf-utils.php:409
+msgid "calendar-plus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:410
+#: includes/class-thfaqf-utils.php:411
+msgid "calendar-times"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:412
+msgid "camera"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:413
+msgid "camera-retro"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:414
+msgid "capsules"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:415
+msgid "car"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:416
+msgid "caret-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:417
+msgid "caret-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:418
+msgid "caret-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:419
+#: includes/class-thfaqf-utils.php:420
+msgid "caret-square-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:421
+#: includes/class-thfaqf-utils.php:422
+msgid "caret-square-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:423
+#: includes/class-thfaqf-utils.php:424
+msgid "caret-square-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:425
+#: includes/class-thfaqf-utils.php:426
+msgid "caret-square-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:427
+msgid "caret-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:428
+msgid "cart-arrow-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:429
+msgid "cart-plus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:430
+msgid "cc-amazon-pay"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:431
+msgid "cc-amex"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:432
+msgid "cc-apple-pay"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:433
+msgid "cc-diners-club"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:434
+msgid "cc-discover"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:435
+msgid "cc-jcb"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:436
+msgid "cc-mastercard"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:437
+msgid "cc-paypal"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:438
+msgid "cc-stripe"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:439
+msgid "cc-visa"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:440
+msgid "centercode"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:441
+msgid "certificate"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:442
+msgid "chart-area"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:443
+#: includes/class-thfaqf-utils.php:444
+msgid "chart-bar"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:445
+msgid "chart-line"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:446
+msgid "chart-pie"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:447
+msgid "check"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:448
+#: includes/class-thfaqf-utils.php:449
+msgid "check-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:450
+#: includes/class-thfaqf-utils.php:451
+msgid "check-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:452
+msgid "chess"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:453
+msgid "chess-bishop"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:454
+msgid "chess-board"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:455
+msgid "chess-king"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:456
+msgid "chess-knight"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:457
+msgid "chess-pawn"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:458
+msgid "chess-queen"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:459
+msgid "chess-rook"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:460
+msgid "chevron-circle-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:461
+msgid "chevron-circle-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:462
+msgid "chevron-circle-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:463
+msgid "chevron-circle-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:464
+msgid "chevron-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:465
+msgid "chevron-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:466
+msgid "chevron-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:467
+msgid "chevron-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:468
+msgid "child"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:469
+msgid "chrome"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:470
+#: includes/class-thfaqf-utils.php:471
+msgid "circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:472
+msgid "circle-notch"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:473
+#: includes/class-thfaqf-utils.php:474
+msgid "clipboard"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:475
+msgid "clipboard-check"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:476
+msgid "clipboard-list"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:477
+#: includes/class-thfaqf-utils.php:478
+msgid "clock"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:479
+#: includes/class-thfaqf-utils.php:480
+msgid "clone"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:481
+#: includes/class-thfaqf-utils.php:482
+msgid "closed-captioning"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:483
+msgid "cloud"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:484
+msgid "cloud-download-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:485
+msgid "cloud-upload-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:486
+msgid "cloudscale"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:487
+msgid "cloudsmith"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:488
+msgid "cloudversify"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:489
+msgid "code"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:490
+msgid "code-branch"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:491
+msgid "codepen"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:492
+msgid "codiepie"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:493
+msgid "coffee"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:494
+msgid "cog"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:495
+msgid "cogs"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:496
+msgid "columns"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:497
+#: includes/class-thfaqf-utils.php:498
+msgid "comment"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:499
+#: includes/class-thfaqf-utils.php:500
+msgid "comment-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:501
+msgid "comment-dots"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:502
+msgid "comment-slash"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:503
+#: includes/class-thfaqf-utils.php:504
+msgid "comments"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:505
+#: includes/class-thfaqf-utils.php:506
+msgid "compass"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:507
+msgid "compress"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:508
+msgid "connectdevelop"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:509
+msgid "contao"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:510
+#: includes/class-thfaqf-utils.php:511
+msgid "copy"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:512
+#: includes/class-thfaqf-utils.php:513
+msgid "copyright"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:514
+msgid "couch"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:515
+msgid "cpanel"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:516
+msgid "creative-commons"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:517
+#: includes/class-thfaqf-utils.php:518
+msgid "credit-card"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:519
+msgid "crop"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:520
+msgid "crosshairs"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:521
+msgid "css3"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:522
+msgid "css3-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:523
+msgid "cube"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:524
+msgid "cubes"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:525
+msgid "cut"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:526
+msgid "cuttlefish"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:527
+msgid "d-and-d"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:528
+msgid "dashcube"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:529
+msgid "database"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:530
+msgid "deaf"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:531
+msgid "delicious"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:532
+msgid "deploydog"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:533
+msgid "deskpro"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:534
+msgid "desktop"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:535
+msgid "deviantart"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:536
+msgid "diagnoses"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:537
+msgid "digg"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:538
+msgid "digital-ocean"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:539
+msgid "discord"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:540
+msgid "discourse"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:541
+msgid "dna"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:542
+msgid "dochub"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:543
+msgid "docker"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:544
+msgid "dollar-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:545
+msgid "dolly"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:546
+msgid "dolly-flatbed"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:547
+msgid "donate"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:548
+#: includes/class-thfaqf-utils.php:549
+msgid "dot-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:550
+msgid "dove"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:551
+msgid "download"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:552
+msgid "draft2digital"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:553
+msgid "dribbble"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:554
+msgid "dribbble-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:555
+msgid "dropbox"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:556
+msgid "drupal"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:557
+msgid "dyalog"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:558
+msgid "earlybirds"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:559
+msgid "edge"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:560
+#: includes/class-thfaqf-utils.php:561
+msgid "edit"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:562
+msgid "eject"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:563
+msgid "elementor"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:564
+msgid "ellipsis-h"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:565
+msgid "ellipsis-v"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:566
+msgid "ember"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:567
+msgid "empire"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:568
+#: includes/class-thfaqf-utils.php:569
+msgid "envelope"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:570
+#: includes/class-thfaqf-utils.php:571
+msgid "envelope-open"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:572
+msgid "envelope-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:573
+msgid "envira"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:574
+msgid "eraser"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:575
+msgid "erlang"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:576
+msgid "ethereum"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:577
+msgid "etsy"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:578
+msgid "euro-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:579
+msgid "exchange-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:580
+msgid "exclamation"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:581
+msgid "exclamation-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:582
+msgid "exclamation-triangle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:583
+msgid "expand"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:584
+msgid "expand-arrows-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:585
+msgid "expeditedssl"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:586
+msgid "external-link-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:587
+msgid "external-link-square-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:588
+msgid "eye"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:589
+msgid "eye-dropper"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:590
+#: includes/class-thfaqf-utils.php:591
+msgid "eye-slash"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:592
+msgid "facebook"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:593
+msgid "facebook-f"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:594
+msgid "facebook-messenger"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:595
+msgid "facebook-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:596
+msgid "fast-backward"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:597
+msgid "fast-forward"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:598
+msgid "fax"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:599
+msgid "female"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:600
+msgid "fighter-jet"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:601
+#: includes/class-thfaqf-utils.php:602
+msgid "file"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:603
+#: includes/class-thfaqf-utils.php:604
+msgid "file-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:605
+#: includes/class-thfaqf-utils.php:606
+msgid "file-archive"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:607
+#: includes/class-thfaqf-utils.php:608
+msgid "file-audio"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:609
+#: includes/class-thfaqf-utils.php:610
+msgid "file-code"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:611
+#: includes/class-thfaqf-utils.php:612
+msgid "file-excel"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:613
+#: includes/class-thfaqf-utils.php:614
+msgid "file-image"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:615
+msgid "file-medical"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:616
+msgid "file-medical-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:617
+#: includes/class-thfaqf-utils.php:618
+msgid "file-pdf"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:619
+#: includes/class-thfaqf-utils.php:620
+msgid "file-powerpoint"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:621
+#: includes/class-thfaqf-utils.php:622
+msgid "file-video"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:623
+#: includes/class-thfaqf-utils.php:624
+msgid "file-word"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:625
+msgid "film"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:626
+msgid "filter"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:627
+msgid "fire"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:628
+msgid "fire-extinguisher"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:629
+msgid "firefox"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:630
+msgid "first-aid"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:631
+msgid "first-order"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:632
+msgid "firstdraft"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:633
+#: includes/class-thfaqf-utils.php:634
+msgid "flag"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:635
+msgid "flag-checkered"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:636
+msgid "flask"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:637
+msgid "flickr"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:638
+msgid "flipboard"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:639
+msgid "fly"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:640
+#: includes/class-thfaqf-utils.php:641
+msgid "folder"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:642
+#: includes/class-thfaqf-utils.php:643
+msgid "folder-open"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:644
+msgid "font"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:645
+msgid "font-awesome"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:646
+msgid "font-awesome-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:647
+msgid "font-awesome-flag"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:648
+msgid "fonticons"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:649
+msgid "fonticons-fi"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:650
+msgid "football-ball"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:651
+msgid "fort-awesome"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:652
+msgid "fort-awesome-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:653
+msgid "forumbee"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:654
+msgid "forward"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:655
+msgid "foursquare"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:656
+msgid "free-code-camp"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:657
+msgid "freebsd"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:658
+#: includes/class-thfaqf-utils.php:659
+msgid "frown"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:660
+#: includes/class-thfaqf-utils.php:661
+msgid "futbol"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:662
+msgid "gamepad"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:663
+msgid "gavel"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:664
+#: includes/class-thfaqf-utils.php:665
+msgid "gem"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:666
+msgid "genderless"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:667
+msgid "get-pocket"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:668
+msgid "gg"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:669
+msgid "gg-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:670
+msgid "gift"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:671
+msgid "git"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:672
+msgid "git-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:673
+msgid "github"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:674
+msgid "github-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:675
+msgid "github-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:676
+msgid "gitkraken"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:677
+msgid "gitlab"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:678
+msgid "gitter"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:679
+msgid "glass-martini"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:680
+msgid "glide"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:681
+msgid "glide-g"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:682
+msgid "globe"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:683
+msgid "gofore"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:684
+msgid "golf-ball"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:685
+msgid "goodreads"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:686
+msgid "goodreads-g"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:687
+msgid "google"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:688
+msgid "google-drive"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:689
+msgid "google-play"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:690
+msgid "google-plus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:691
+msgid "google-plus-g"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:692
+msgid "google-plus-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:693
+msgid "google-wallet"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:694
+msgid "graduation-cap"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:695
+msgid "gratipay"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:696
+msgid "grav"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:697
+msgid "gripfire"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:698
+msgid "grunt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:699
+msgid "gulp"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:700
+msgid "h-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:701
+msgid "hacker-news"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:702
+msgid "hacker-news-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:703
+msgid "hand-holding"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:704
+msgid "hand-holding-heart"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:705
+msgid "hand-holding-usd"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:706
+#: includes/class-thfaqf-utils.php:707
+msgid "hand-lizard"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:708
+#: includes/class-thfaqf-utils.php:709
+msgid "hand-paper"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:710
+#: includes/class-thfaqf-utils.php:711
+msgid "hand-peace"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:712
+#: includes/class-thfaqf-utils.php:713
+msgid "hand-point-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:714
+#: includes/class-thfaqf-utils.php:715
+msgid "hand-point-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:716
+#: includes/class-thfaqf-utils.php:717
+msgid "hand-point-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:718
+#: includes/class-thfaqf-utils.php:719
+msgid "hand-point-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:720
+#: includes/class-thfaqf-utils.php:721
+msgid "hand-pointer"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:722
+#: includes/class-thfaqf-utils.php:723
+msgid "hand-rock"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:724
+#: includes/class-thfaqf-utils.php:725
+msgid "hand-scissors"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:726
+#: includes/class-thfaqf-utils.php:727
+msgid "hand-spock"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:728
+msgid "hands"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:729
+msgid "hands-helping"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:730
+#: includes/class-thfaqf-utils.php:731
+msgid "handshake"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:732
+msgid "hashtag"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:733
+#: includes/class-thfaqf-utils.php:734
+msgid "hdd"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:735
+msgid "heading"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:736
+msgid "headphones"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:737
+#: includes/class-thfaqf-utils.php:738
+msgid "heart"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:739
+msgid "heartbeat"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:740
+msgid "hips"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:741
+msgid "hire-a-helper"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:742
+msgid "history"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:743
+msgid "hockey-puck"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:744
+msgid "home"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:745
+msgid "hooli"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:746
+#: includes/class-thfaqf-utils.php:747
+msgid "hospital"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:748
+msgid "hospital-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:749
+msgid "hospital-symbol"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:750
+msgid "hotjar"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:751
+#: includes/class-thfaqf-utils.php:752
+msgid "hourglass"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:753
+msgid "hourglass-end"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:754
+msgid "hourglass-half"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:755
+msgid "hourglass-start"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:756
+msgid "houzz"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:757
+msgid "html5"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:758
+msgid "hubspot"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:759
+msgid "i-cursor"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:760
+#: includes/class-thfaqf-utils.php:761
+msgid "id-badge"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:762
+#: includes/class-thfaqf-utils.php:763
+msgid "id-card"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:764
+msgid "id-card-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:765
+#: includes/class-thfaqf-utils.php:766
+msgid "image"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:767
+#: includes/class-thfaqf-utils.php:768
+msgid "images"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:769
+msgid "imdb"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:770
+msgid "inbox"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:771
+msgid "indent"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:772
+msgid "industry"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:773
+msgid "info"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:774
+msgid "info-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:775
+msgid "instagram"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:776
+msgid "internet-explorer"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:777
+msgid "ioxhost"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:778
+msgid "italic"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:779
+msgid "itunes"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:780
+msgid "itunes-note"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:781
+msgid "java"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:782
+msgid "jenkins"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:783
+msgid "joget"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:784
+msgid "joomla"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:785
+msgid "js"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:786
+msgid "js-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:787
+msgid "jsfiddle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:788
+msgid "key"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:789
+#: includes/class-thfaqf-utils.php:790
+msgid "keyboard"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:791
+msgid "keycdn"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:792
+msgid "kickstarter"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:793
+msgid "kickstarter-k"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:794
+msgid "korvue"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:795
+msgid "language"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:796
+msgid "laptop"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:797
+msgid "laravel"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:798
+msgid "lastfm"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:799
+msgid "lastfm-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:800
+msgid "leaf"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:801
+msgid "leanpub"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:802
+#: includes/class-thfaqf-utils.php:803
+msgid "lemon"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:804
+msgid "less"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:805
+msgid "level-down-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:806
+msgid "level-up-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:807
+#: includes/class-thfaqf-utils.php:808
+msgid "life-ring"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:809
+#: includes/class-thfaqf-utils.php:810
+msgid "lightbulb"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:811
+msgid "line"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:812
+msgid "link"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:813
+msgid "linkedin"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:814
+msgid "linkedin-in"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:815
+msgid "linode"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:816
+msgid "linux"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:817
+msgid "lira-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:818
+msgid "list"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:819
+#: includes/class-thfaqf-utils.php:820
+msgid "list-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:821
+msgid "list-ol"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:822
+msgid "list-ul"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:823
+msgid "location-arrow"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:824
+msgid "lock"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:825
+msgid "lock-open"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:826
+msgid "long-arrow-alt-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:827
+msgid "long-arrow-alt-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:828
+msgid "long-arrow-alt-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:829
+msgid "long-arrow-alt-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:830
+msgid "low-vision"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:831
+msgid "lyft"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:832
+msgid "magento"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:833
+msgid "magic"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:834
+msgid "magnet"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:835
+msgid "male"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:836
+#: includes/class-thfaqf-utils.php:837
+msgid "map"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:838
+msgid "map-marker"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:839
+msgid "map-marker-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:840
+msgid "map-pin"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:841
+msgid "map-signs"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:842
+msgid "mars"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:843
+msgid "mars-double"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:844
+msgid "mars-stroke"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:845
+msgid "mars-stroke-h"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:846
+msgid "mars-stroke-v"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:847
+msgid "maxcdn"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:848
+msgid "medapps"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:849
+msgid "medium"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:850
+msgid "medium-m"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:851
+msgid "medkit"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:852
+msgid "medrt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:853
+msgid "meetup"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:854
+#: includes/class-thfaqf-utils.php:855
+msgid "meh"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:856
+msgid "mercury"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:857
+msgid "microchip"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:858
+msgid "microphone"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:859
+msgid "microphone-slash"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:860
+msgid "microsoft"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:861
+msgid "minus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:862
+msgid "minus-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:863
+#: includes/class-thfaqf-utils.php:864
+msgid "minus-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:865
+msgid "mix"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:866
+msgid "mixcloud"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:867
+msgid "mizuni"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:868
+msgid "mobile"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:869
+msgid "mobile-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:870
+msgid "modx"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:871
+msgid "monero"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:872
+#: includes/class-thfaqf-utils.php:873
+msgid "money-bill-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:874
+#: includes/class-thfaqf-utils.php:875
+msgid "moon"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:876
+msgid "motorcycle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:877
+msgid "mouse-pointer"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:878
+msgid "music"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:879
+msgid "napster"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:880
+msgid "neuter"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:881
+#: includes/class-thfaqf-utils.php:882
+msgid "newspaper"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:883
+msgid "nintendo-switch"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:884
+msgid "node"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:885
+msgid "node-js"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:886
+msgid "notes-medical"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:887
+msgid "npm"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:888
+msgid "ns8"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:889
+msgid "nutritionix"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:890
+#: includes/class-thfaqf-utils.php:891
+msgid "object-group"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:892
+#: includes/class-thfaqf-utils.php:893
+msgid "object-ungroup"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:894
+msgid "odnoklassniki"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:895
+msgid "odnoklassniki-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:896
+msgid "opencart"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:897
+msgid "openid"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:898
+msgid "opera"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:899
+msgid "optin-monster"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:900
+msgid "osi"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:901
+msgid "outdent"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:902
+msgid "page4"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:903
+msgid "pagelines"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:904
+msgid "paint-brush"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:905
+msgid "palfed"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:906
+msgid "pallet"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:907
+#: includes/class-thfaqf-utils.php:908
+msgid "paper-plane"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:909
+msgid "paperclip"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:910
+msgid "parachute-box"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:911
+msgid "paragraph"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:912
+msgid "paste"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:913
+msgid "patreon"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:914
+msgid "pause"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:915
+#: includes/class-thfaqf-utils.php:916
+msgid "pause-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:917
+msgid "paw"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:918
+msgid "paypal"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:919
+msgid "pen-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:920
+msgid "pencil-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:921
+msgid "people-carry"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:922
+msgid "percent"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:923
+msgid "periscope"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:924
+msgid "phabricator"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:925
+msgid "phoenix-framework"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:926
+msgid "phone"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:927
+msgid "phone-slash"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:928
+msgid "phone-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:929
+msgid "phone-volume"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:930
+msgid "php"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:931
+msgid "pied-piper"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:932
+msgid "pied-piper-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:933
+msgid "pied-piper-hat"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:934
+msgid "pied-piper-pp"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:935
+msgid "piggy-bank"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:936
+msgid "pills"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:937
+msgid "pinterest"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:938
+msgid "pinterest-p"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:939
+msgid "pinterest-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:940
+msgid "plane"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:941
+msgid "play"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:942
+#: includes/class-thfaqf-utils.php:943
+msgid "play-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:944
+msgid "playstation"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:945
+msgid "plug"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:946
+msgid "plus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:947
+msgid "plus-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:948
+#: includes/class-thfaqf-utils.php:949
+msgid "plus-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:950
+msgid "podcast"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:951
+msgid "poo"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:952
+msgid "pound-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:953
+msgid "power-off"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:954
+msgid "prescription-bottle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:955
+msgid "prescription-bottle-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:956
+msgid "print"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:957
+msgid "procedures"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:958
+msgid "product-hunt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:959
+msgid "pushed"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:960
+msgid "puzzle-piece"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:961
+msgid "python"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:962
+msgid "qq"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:963
+msgid "qrcode"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:964
+msgid "question"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:965
+#: includes/class-thfaqf-utils.php:966
+msgid "question-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:967
+msgid "quidditch"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:968
+msgid "quinscape"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:969
+msgid "quora"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:970
+msgid "quote-left"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:971
+msgid "quote-right"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:972
+msgid "random"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:973
+msgid "ravelry"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:974
+msgid "react"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:975
+msgid "readme"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:976
+msgid "rebel"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:977
+msgid "recycle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:978
+msgid "red-river"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:979
+msgid "reddit"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:980
+msgid "reddit-alien"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:981
+msgid "reddit-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:982
+msgid "redo"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:983
+msgid "redo-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:984
+#: includes/class-thfaqf-utils.php:985
+msgid "registered"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:986
+msgid "rendact"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:987
+msgid "renren"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:988
+msgid "reply"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:989
+msgid "reply-all"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:990
+msgid "replyd"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:991
+msgid "resolving"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:992
+msgid "retweet"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:993
+msgid "ribbon"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:994
+msgid "road"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:995
+msgid "rocket"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:996
+msgid "rocketchat"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:997
+msgid "rockrms"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:998
+msgid "rss"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:999
+msgid "rss-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1000
+msgid "ruble-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1001
+msgid "rupee-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1002
+msgid "safari"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1003
+msgid "sass"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1004
+#: includes/class-thfaqf-utils.php:1005
+msgid "save"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1006
+msgid "schlix"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1007
+msgid "scribd"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1008
+msgid "search"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1009
+msgid "search-minus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1010
+msgid "search-plus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1011
+msgid "searchengin"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1012
+msgid "seedling"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1013
+msgid "sellcast"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1014
+msgid "sellsy"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1015
+msgid "server"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1016
+msgid "servicestack"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1017
+msgid "share"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1018
+msgid "share-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1019
+msgid "share-alt-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1020
+#: includes/class-thfaqf-utils.php:1021
+msgid "share-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1022
+msgid "shekel-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1023
+msgid "shield-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1024
+msgid "ship"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1025
+msgid "shipping-fast"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1026
+msgid "shirtsinbulk"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1027
+msgid "shopping-bag"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1028
+msgid "shopping-basket"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1029
+msgid "shopping-cart"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1030
+msgid "shower"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1031
+msgid "sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1032
+msgid "sign-in-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1033
+msgid "sign-language"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1034
+msgid "sign-out-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1035
+msgid "signal"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1036
+msgid "simplybuilt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1037
+msgid "sistrix"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1038
+msgid "sitemap"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1039
+msgid "skyatlas"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1040
+msgid "skype"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1041
+msgid "slack"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1042
+msgid "slack-hash"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1043
+msgid "sliders-h"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1044
+msgid "slideshare"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1045
+#: includes/class-thfaqf-utils.php:1046
+msgid "smile"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1047
+msgid "smoking"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1048
+msgid "snapchat"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1049
+msgid "snapchat-ghost"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1050
+msgid "snapchat-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1051
+#: includes/class-thfaqf-utils.php:1052
+msgid "snowflake"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1053
+msgid "sort"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1054
+msgid "sort-alpha-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1055
+msgid "sort-alpha-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1056
+msgid "sort-amount-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1057
+msgid "sort-amount-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1058
+msgid "sort-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1059
+msgid "sort-numeric-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1060
+msgid "sort-numeric-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1061
+msgid "sort-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1062
+msgid "soundcloud"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1063
+msgid "space-shuttle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1064
+msgid "speakap"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1065
+msgid "spinner"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1066
+msgid "spotify"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1067
+#: includes/class-thfaqf-utils.php:1068
+msgid "square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1069
+msgid "square-full"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1070
+msgid "stack-exchange"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1071
+msgid "stack-overflow"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1072
+#: includes/class-thfaqf-utils.php:1073
+msgid "star"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1074
+#: includes/class-thfaqf-utils.php:1075
+msgid "star-half"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1076
+msgid "staylinked"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1077
+msgid "steam"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1078
+msgid "steam-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1079
+msgid "steam-symbol"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1080
+msgid "step-backward"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1081
+msgid "step-forward"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1082
+msgid "stethoscope"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1083
+msgid "sticker-mule"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1084
+#: includes/class-thfaqf-utils.php:1085
+msgid "sticky-note"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1086
+msgid "stop"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1087
+#: includes/class-thfaqf-utils.php:1088
+msgid "stop-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1089
+msgid "stopwatch"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1090
+msgid "strava"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1091
+msgid "street-view"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1092
+msgid "strikethrough"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1093
+msgid "stripe"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1094
+msgid "stripe-s"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1095
+msgid "studiovinari"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1096
+msgid "stumbleupon"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1097
+msgid "stumbleupon-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1098
+msgid "subscript"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1099
+msgid "subway"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1100
+msgid "suitcase"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1101
+#: includes/class-thfaqf-utils.php:1102
+msgid "sun"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1103
+msgid "superpowers"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1104
+msgid "superscript"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1105
+msgid "supple"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1106
+msgid "sync"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1107
+msgid "sync-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1108
+msgid "syringe"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1109
+msgid "table"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1110
+msgid "table-tennis"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1111
+msgid "tablet"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1112
+msgid "tablet-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1113
+msgid "tablets"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1114
+msgid "tachometer-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1115
+msgid "tag"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1116
+msgid "tags"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1117
+msgid "tape"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1118
+msgid "tasks"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1119
+msgid "taxi"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1120
+msgid "telegram"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1121
+msgid "telegram-plane"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1122
+msgid "tencent-weibo"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1123
+msgid "terminal"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1124
+msgid "text-height"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1125
+msgid "text-width"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1126
+msgid "th"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1127
+msgid "th-large"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1128
+msgid "th-list"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1129
+msgid "themeisle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1130
+msgid "thermometer"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1131
+msgid "thermometer-empty"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1132
+msgid "thermometer-full"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1133
+msgid "thermometer-half"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1134
+msgid "thermometer-quarter"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1135
+msgid "thermometer-three-quarters"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1136
+#: includes/class-thfaqf-utils.php:1137
+msgid "thumbs-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1138
+#: includes/class-thfaqf-utils.php:1139
+msgid "thumbs-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1140
+msgid "thumbtack"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1141
+msgid "ticket-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1142
+msgid "times"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1143
+#: includes/class-thfaqf-utils.php:1144
+msgid "times-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1145
+msgid "tint"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1146
+msgid "toggle-off"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1147
+msgid "toggle-on"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1148
+msgid "trademark"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1149
+msgid "train"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1150
+msgid "transgender"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1151
+msgid "transgender-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1152
+msgid "trash"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1153
+#: includes/class-thfaqf-utils.php:1154
+msgid "trash-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1155
+msgid "tree"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1156
+msgid "trello"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1157
+msgid "tripadvisor"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1158
+msgid "trophy"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1159
+msgid "truck"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1160
+msgid "truck-loading"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1161
+msgid "truck-moving"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1162
+msgid "tty"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1163
+msgid "tumblr"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1164
+msgid "tumblr-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1165
+msgid "tv"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1166
+msgid "twitch"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1167
+msgid "twitter"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1168
+msgid "twitter-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1169
+msgid "typo3"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1170
+msgid "uber"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1171
+msgid "uikit"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1172
+msgid "umbrella"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1173
+msgid "underline"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1174
+msgid "undo"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1175
+msgid "undo-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1176
+msgid "uniregistry"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1177
+msgid "universal-access"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1178
+msgid "university"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1179
+msgid "unlink"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1180
+msgid "unlock"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1181
+msgid "unlock-alt"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1182
+msgid "untappd"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1183
+msgid "upload"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1184
+msgid "usb"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1185
+#: includes/class-thfaqf-utils.php:1186
+msgid "user"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1187
+#: includes/class-thfaqf-utils.php:1188
+msgid "user-circle"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1189
+msgid "user-md"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1190
+msgid "user-plus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1191
+msgid "user-secret"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1192
+msgid "user-times"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1193
+msgid "users"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1194
+msgid "ussunnah"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1195
+msgid "utensil-spoon"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1196
+msgid "utensils"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1197
+msgid "vaadin"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1198
+msgid "venus"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1199
+msgid "venus-double"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1200
+msgid "venus-mars"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1201
+msgid "viacoin"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1202
+msgid "viadeo"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1203
+msgid "viadeo-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1204
+msgid "vial"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1205
+msgid "vials"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1206
+msgid "viber"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1207
+msgid "video"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1208
+msgid "video-slash"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1209
+msgid "vimeo"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1210
+msgid "vimeo-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1211
+msgid "vimeo-v"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1212
+msgid "vine"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1213
+msgid "vk"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1214
+msgid "vnv"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1215
+msgid "volleyball-ball"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1216
+msgid "volume-down"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1217
+msgid "volume-off"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1218
+msgid "volume-up"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1219
+msgid "vuejs"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1220
+msgid "warehouse"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1221
+msgid "weibo"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1222
+msgid "weight"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1223
+msgid "weixin"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1224
+msgid "whatsapp"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1225
+msgid "whatsapp-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1226
+msgid "wheelchair"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1227
+msgid "whmcs"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1228
+msgid "wifi"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1229
+msgid "wikipedia-w"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1230
+#: includes/class-thfaqf-utils.php:1231
+msgid "window-close"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1232
+#: includes/class-thfaqf-utils.php:1233
+msgid "window-maximize"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1234
+#: includes/class-thfaqf-utils.php:1235
+msgid "window-minimize"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1236
+#: includes/class-thfaqf-utils.php:1237
+msgid "window-restore"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1238
+msgid "windows"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1239
+msgid "wine-glass"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1240
+msgid "won-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1241
+msgid "wordpress"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1242
+msgid "wordpress-simple"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1243
+msgid "wpbeginner"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1244
+msgid "wpexplorer"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1245
+msgid "wpforms"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1246
+msgid "wrench"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1247
+msgid "x-ray"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1248
+msgid "xbox"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1249
+msgid "xing"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1250
+msgid "xing-square"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1251
+msgid "y-combinator"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1252
+msgid "yahoo"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1253
+msgid "yandex"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1254
+msgid "yandex-international"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1255
+msgid "yelp"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1256
+msgid "yen-sign"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1257
+msgid "yoast"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1258
+msgid "youtube"
+msgstr ""
+
+#: includes/class-thfaqf-utils.php:1259
+msgid "youtube-square"
 msgstr ""

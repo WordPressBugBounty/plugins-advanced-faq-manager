@@ -11,10 +11,8 @@ class THFAQF_Public{
     	add_shortcode("thfaq_group", array($this, 'faq_layout_shortcode'));
     }   
 
-    public function enqueue_styles_and_scripts(){
+	public function enqueue_styles_and_scripts(){
 		wp_register_style('thfaqf-public-style', THFAQF_ASSETS_URL_PUBLIC.'css/thfaqf-public.css');
-	    // wp_enqueue_style('FontAwesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
-	    wp_enqueue_style('thfaq-fontawesome', THFAQF_ASSETS_URL_PUBLIC.'css/font-awesome.min.css', array(), THFAQF_VERSION);
 	    wp_enqueue_script('font-icon-picker-js',THFAQF_ASSETS_URL_PUBLIC.'js/fontawesome.min.js',array('jquery'),THFAQF_VERSION,true);
 	    wp_enqueue_style('thfaqf-public-style');
 	    wp_enqueue_style('styleicon');
@@ -646,9 +644,9 @@ class THFAQF_Public{
 		?>
 
 		<span class="th-like-wrapper">		
-			<a href="<?php echo esc_attr($user_login); ?>" onclick="likeDislikeOption(this)" data-user_id="<?php echo esc_attr($user_id); ?>" class="thfaq-thums-up" data-_wp_thfaqld_nonce="<?php echo esc_attr(wp_create_nonce('thfaqld_nonce'));?>" data-post_id="<?php echo esc_attr($post_id);?>" data-uid="<?php echo esc_attr($key);?>" data-value="like" data-action="like_dislike_option"><i style="<?php echo esc_attr($l_color); ?>" class="thfaq-icomoon icon-thumb_up_alt"></i></a>
+			<a href="<?php echo esc_attr($user_login); ?>" data-user_id="<?php echo esc_attr($user_id); ?>" class="thfaq-thums-up" data-_wp_thfaqld_nonce="<?php echo esc_attr(wp_create_nonce('thfaqld_nonce'));?>" data-post_id="<?php echo esc_attr($post_id);?>" data-uid="<?php echo esc_attr($key);?>" data-value="like" data-action="like_dislike_option"><i style="<?php echo esc_attr($l_color); ?>" class="thfaq-icomoon icon-thumb_up_alt"></i></a>
 			<span class="thfaq-like-count"><?php echo esc_html($like_count);?></span>  
-			<a href="<?php echo esc_attr($user_login); ?>" onclick="likeDislikeOption(this)" data-user_id="<?php echo esc_attr($user_id); ?>" class="thfaq-thums-down" data-post_id="<?php echo esc_attr($post_id);?>" data-_wp_thfaqld_nonce="<?php echo esc_attr(wp_create_nonce('thfaqld_nonce'));?>" data-uid="<?php echo esc_attr($key);?>" data-value="dislike"  data-action="like_dislike_option"><span class="th-dislike-img"><i style="<?php echo esc_attr($d_color); ?>" class="thfaq-icomoon icon-thumb_down"></i></span></a>
+			<a href="<?php echo esc_attr($user_login); ?>" data-user_id="<?php echo esc_attr($user_id); ?>" class="thfaq-thums-down" data-post_id="<?php echo esc_attr($post_id);?>" data-_wp_thfaqld_nonce="<?php echo esc_attr(wp_create_nonce('thfaqld_nonce'));?>" data-uid="<?php echo esc_attr($key);?>" data-value="dislike"  data-action="like_dislike_option"><span class="th-dislike-img"><i style="<?php echo esc_attr($d_color); ?>" class="thfaq-icomoon icon-thumb_down"></i></span></a>
 			<span class="thfaq-dislike-count"><?php echo esc_html($dislike_count);?></span>
 		</span>
 		<?php
@@ -673,8 +671,7 @@ class THFAQF_Public{
 	    	$responce = array( 'verify_nonce' => '<span class="thfaqf-error-submt">Sorry, your nonce did not verify.</span>');
 	        wp_send_json($responce);
 	    }else{
-			global $current_user;
-			$user_id = $current_user->ID;
+			$user_id = get_current_user_id();
 	       	$value = isset($_REQUEST['value']) ? trim($_REQUEST['value']) : false;
 	       	$faq_uid = isset($_REQUEST['uid']) ? trim($_REQUEST['uid']) : false;
 	       	$post_id = isset($_REQUEST['post_id']) ? trim($_REQUEST['post_id']) : false;
@@ -688,7 +685,7 @@ class THFAQF_Public{
 	       	$faq_data = get_post_meta($post_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS, true);
 		   	$result = array();
 
-	        if ($user_id >0){
+	        if ($user_id > 0 && is_array($faq_data) && isset($faq_data[$faq_uid])){
 	        	$faq_liked_user_string = !empty($faq_data[$faq_uid]['like_user_ids']) ? trim($faq_data[$faq_uid]['like_user_ids']) : false;
         		$faq_disliked_user_string = !empty($faq_data[$faq_uid]['dislike_user_ids']) ? trim($faq_data[$faq_uid]['dislike_user_ids']) : false;
         		$faq_liked_user_array = explode(',', $faq_liked_user_string);
@@ -750,9 +747,10 @@ class THFAQF_Public{
 				$update = update_post_meta($post_id, THFAQF_Utils::OPTION_KEY_FAQ_ITEMS,$faq_data);
 				$result = array('like_user_ids' => $faq_liked_user_array,'dislike_user_ids' => $faq_disliked_user_array,'current_user_id' => $user_id);
 
-				if($update)
-					wp_send_json($result);
+				wp_send_json($result);
 	        } 
+
+			wp_send_json_error(array('message' => 'Unable to update like/dislike status.'));
 	    }
 	}
 
@@ -791,4 +789,3 @@ class THFAQF_Public{
 }//end class
 
 endif;
-

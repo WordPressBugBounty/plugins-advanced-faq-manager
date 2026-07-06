@@ -15,6 +15,7 @@ var thfaqf_settings = (function ($, window, document){
         init_faq_settings();
         display_expnd_icon();
         initialize_code_mrr();
+        setup_faq_category_ajax_listener();
 
     });
 
@@ -311,6 +312,40 @@ var thfaqf_settings = (function ($, window, document){
         }
     }
 
+    function setup_faq_category_ajax_listener() {
+        var checklist = $('#faq_categorychecklist');
+
+        if (!checklist.length) {
+            return;
+        }
+
+        checklist.on('wpListAddEnd', function() {
+            cleanup_faq_category_checklist($(this));
+        });
+    }
+
+    function cleanup_faq_category_checklist(checklist) {
+        var terms = {};
+
+        checklist.find('input[type="checkbox"][name="tax_input[faq_category][]"]').each(function() {
+            var input = $(this);
+            var termId = input.val();
+            var item = input.closest('li');
+            var currentItem;
+
+            if (!item.length || !$.contains(document, item[0])) {
+                return;
+            }
+
+            if (terms[termId]) {
+                currentItem = terms[termId];
+                item.replaceWith(currentItem);
+            } else {
+                terms[termId] = item;
+            }
+        });
+    }
+
     return{
         addFaqItem : add_faq_item,
         editFaqItem : edit_faq_item,
@@ -364,5 +399,3 @@ function thfaqfEnableDisableCustonCSS(elm){
 
 
  
-
-

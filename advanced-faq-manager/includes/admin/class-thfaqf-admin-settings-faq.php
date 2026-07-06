@@ -346,6 +346,18 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
         }
     }
 
+    public function modify_faq_category_checklist_args($args, $post_id){
+        if(!is_array($args) || !is_admin() || empty($args['taxonomy'])){
+            return $args;
+        }
+
+        if($args['taxonomy'] === 'faq_category'){
+            $args['checked_ontop'] = false;
+        }
+
+        return $args;
+    }
+
     public function save_settings_override($post_id){
         $override_fields = THFAQF_Utils::get_settings_override_fields();
         $faq_individual_settings = THFAQF_Utils::get_faq_individual_settings();
@@ -430,5 +442,3 @@ class THFAQF_Admin_Settings_FAQ extends THFAQF_Admin_Settings{
 }
 
 endif;
-
-

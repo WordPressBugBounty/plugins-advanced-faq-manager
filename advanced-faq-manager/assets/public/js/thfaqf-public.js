@@ -4,6 +4,7 @@ var thfaqf_public = (function($, window, document){
     function initialize_thfaqf(){
         setup_faq_accordion();
         setup_share_icons();
+        setup_like_dislike();
         activate_faq_group_url_search();
 
         $('input[name="form_time"]').val(Math.floor(Date.now() / 1000));
@@ -67,18 +68,31 @@ var thfaqf_public = (function($, window, document){
         });
     }
 
-    function like_dislike_option(elm){
-        Like_and_dislike_option($(elm),event);
+    function setup_like_dislike(){
+        $(document).on('click', '.th-like-wrapper .thfaq-thums-up, .th-like-wrapper .thfaq-thums-down', function(e){
+            e.preventDefault();
+            Like_and_dislike_option($(this), e);
+            return false;
+        });
+    }
+
+    function like_dislike_option(elm, evnt){
+        Like_and_dislike_option($(elm), evnt);
     }
 
     function Like_and_dislike_option(click,evnt){
         var wrapper = click.closest('.th-like-wrapper'),
             id = click.data('user_id');  
 
+        if(evnt && evnt.preventDefault){
+            evnt.preventDefault();
+        }
+
         if(id<1){
-            confirm('Please login to like or dislike FAQs.') == true ? '': evnt.preventDefault(evnt);
-        }else{
-            evnt.preventDefault(evnt)
+            if(confirm('Please login to like or dislike FAQs.') == true){
+                window.location.href = click.attr('href');
+            }
+            return;
         } 
  
         var dataset = click.data();
@@ -102,6 +116,8 @@ var thfaqf_public = (function($, window, document){
 
                 if(response.verify_nonce){
                     $(wrapper).html(response.verify_nonce);
+                }else if(response.success === false){
+                    $(wrapper).append('<span class="thfaqf-error-submt">'+ response.data.message +'</span>');
                 }else {
                     var like_count = Object.keys(response.like_user_ids).length,
                         dislike_count = Object.keys(response.dislike_user_ids) !== 'undefined'? Object.keys(response.dislike_user_ids).length : '',
@@ -307,8 +323,9 @@ var thfaqf_public = (function($, window, document){
 
 }(window.jQuery, window, document));
 
-function likeDislikeOption(elm){
-    thfaqf_public.likeDislike(elm);
+function likeDislikeOption(elm, evnt){
+    thfaqf_public.likeDislike(elm, evnt);
+    return false;
 }
 
 function faq_search_option(elm){
@@ -334,8 +351,6 @@ function ThfaqPagination(elm,load_page){
 function ThfaqEachPage(elm,load_page){
     thfaqf_public.ThfaqEachPageNumber(elm);
 }
-
-
 
 
 
