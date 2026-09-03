@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Advanced FAQ Manager (Best FAQ Plugin for WordPress)
  * Description: FAQ Plugin for WordPress lets you create and manage FAQs in your WordPress pages. 
- * Version:     1.5.5
+ * Version:     1.5.6
  * Author:      ThemeHigh
  * Author URI:  https://www.themehigh.com
  * Plugin URI:  https://www.themehigh.com
@@ -32,7 +32,7 @@ if(!class_exists('THFAQF_Manager')){
 		}
 
 		public function init() {
-			define('THFAQF_VERSION', '1.5.5');
+			define('THFAQF_VERSION', '1.5.6');
 			!defined('THFAQF_BASE_NAME') && define('THFAQF_BASE_NAME', plugin_basename( __FILE__ ));
 			!defined('THFAQF_PATH') && define('THFAQF_PATH', plugin_dir_path( __FILE__ ));
 			!defined('THFAQF_URL') && define('THFAQF_URL', plugins_url( '/', __FILE__ ));
